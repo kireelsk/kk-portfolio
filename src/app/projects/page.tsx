@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { allProjects } from "content-collections";
 
 export default function ProjectPage() {
   return (
@@ -6,9 +7,13 @@ export default function ProjectPage() {
       <h1>Projects</h1>
 
       <ul>
-        <li>
-          <Link href="/projects/example">Example Project</Link>
-        </li>
+        {allProjects.map((project) => (
+          <li key={project._meta.path}>
+            <Link href={`/projects/${project._meta.path}`}>
+              {project.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </main>
   );
