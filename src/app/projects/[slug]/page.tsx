@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { allProjects } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
@@ -8,7 +9,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({
+export default async function Project({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -21,8 +22,18 @@ export default async function ProjectPage({
 
   return (
     <main className="p-8">
-      <h1>{project.title}</h1>
-      <MDXContent code={project.mdx} />
+      <section className="mb-80">
+        <Link
+          href="/projects"
+          className="mt-8 inline-block text-neutral-500 hover:underline"
+        >
+          ← All Projects
+        </Link>
+        <h1 className="mt-10 mb-6 text-5xl md:text-8xl font-semibold tracking-tight">
+          {project.title}
+        </h1>
+        <MDXContent code={project.mdx} />
+      </section>
     </main>
   );
 }

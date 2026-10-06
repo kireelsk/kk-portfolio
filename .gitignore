@@ -43,3 +43,7 @@ next-env.d.ts
 
 # сontent сollections
 .content-collections/
+
+# unused/test pages
+/src/app/page_old.tsx
+/src/app/layout_old.tsx
