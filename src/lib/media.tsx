@@ -3,9 +3,9 @@
 export function getMediaUrl(path: string) {
   const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL;
 
-  if (!mediaUrl) {
-    throw new Error("NEXT_PUBLIC_MEDIA_URL is not configured");
+  if (mediaUrl) {
+    return `${mediaUrl}/${path}`;
   }
 
-  return `${mediaUrl}/${path}`;
+  return `/media/${path}`;
 }
