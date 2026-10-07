@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { getMediaUrl } from "@/lib/media";
 import { allProjects } from "content-collections";
 
 export default function Projects() {
@@ -10,8 +12,17 @@ export default function Projects() {
         </h1>
 
         <ul className="space-y-4">
-          {allProjects.map((project) => (
+          {allProjects.map((project, index) => (
             <li key={project._meta.path}>
+              <Image
+                src={getMediaUrl(
+                  `projects/${project._meta.path}/cover-horizontal.webp`,
+                )}
+                alt=""
+                width={1600}
+                height={1200}
+                loading={index === 0 ? "eager" : "lazy"}
+              />
               <Link
                 href={`/projects/${project._meta.path}`}
                 className="text-xl hover:underline"
