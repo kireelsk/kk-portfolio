@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import { getMediaUrl } from "@/lib/media";
 import { allProjects } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
@@ -21,17 +23,44 @@ export default async function Project({
   if (!project) notFound();
 
   return (
-    <main className="p-8">
+    <main className="px-10">
       <section className="mb-80">
-        <Link
-          href="/projects"
-          className="mt-8 inline-block text-neutral-500 hover:underline"
-        >
-          ← All Projects
-        </Link>
-        <h1 className="mt-10 mb-6 text-5xl md:text-8xl font-semibold tracking-tight">
+        <h1 className="mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
           {project.title}
         </h1>
+
+        <p className="mt-4 text-xl text-neutral-300">{project.description}</p>
+
+        <div className="mt-10 grid grid-cols-3 gap-8">
+          <Image
+            src={getMediaUrl(
+              `projects/${project._meta.path}/cover-horizontal.webp`,
+            )}
+            alt=""
+            width={1600}
+            height={1200}
+            className="w-full h-auto col-span-2"
+            loading="eager"
+          />
+
+          <Image
+            src={getMediaUrl(
+              `projects/${project._meta.path}/cover-vertical.webp`,
+            )}
+            alt=""
+            width={1200}
+            height={1600}
+            className="w-full h-auto col-span-1"
+            loading="eager"
+          />
+        </div>
+
+        <Link
+          href="/projects"
+          className="inline-block text-xl text-neutral-500 hover:underline"
+        >
+          All Projects
+        </Link>
         <MDXContent code={project.mdx} />
       </section>
     </main>

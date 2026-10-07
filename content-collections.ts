@@ -8,6 +8,7 @@ const projects = defineCollection({
   include: "*.mdx",
   schema: z.object({
     title: z.string(),
+    description: z.string(),
     year: z.number(),
     type: z.string(),
     tags: z.array(z.string()),

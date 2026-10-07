@@ -1,11 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
+import { getMediaUrl } from "@/lib/media";
 import { allProjects } from "content-collections";
 
 export default function Home() {
   return (
     <main className="p-8">
       <section className="mb-80">
-        <h1 className="mt-10 mb-6 text-5xl md:text-8xl font-semibold tracking-tight">
+        <h1 className="mt-10 mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
           Designer portfolio
         </h1>
 
@@ -31,14 +33,31 @@ export default function Home() {
       <section className="mb-50">
         <h2 className="mb-8 text-5xl font-semibold">Selected Projects</h2>
 
-        <ul className="space-y-4">
-          {allProjects.map((project) => (
+        <ul className="space-y-20">
+          {allProjects.map((project, index) => (
             <li key={project._meta.path}>
               <Link
+                className="grid grid-cols-3 gap-8"
                 href={`/projects/${project._meta.path}`}
-                className="text-xl hover:underline"
               >
-                {project.title} →
+                <div className="col-span-1 self-end">
+                  <h3 className="text-3xl font-semibold">{project.title}</h3>
+
+                  <p className="mt-4 text-xl text-neutral-300">
+                    {project.description}
+                  </p>
+                </div>
+
+                <Image
+                  className="w-full h-auto col-span-2"
+                  src={getMediaUrl(
+                    `projects/${project._meta.path}/cover-horizontal.webp`,
+                  )}
+                  alt=""
+                  width={1600}
+                  height={1200}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
               </Link>
             </li>
           ))}
@@ -46,7 +65,7 @@ export default function Home() {
 
         <Link
           href="/projects"
-          className="mt-8 inline-block text-neutral-500 hover:underline"
+          className="mt-20 inline-block text-xl text-neutral-500 hover:underline"
         >
           All Projects
         </Link>
