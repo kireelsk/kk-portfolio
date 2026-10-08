@@ -2,6 +2,9 @@ projects:
   - id: example
     status: featured
 
+  - id: draft
+    status: draft
+
   - id: mobile
     status: featured
 
@@ -9,7 +12,4 @@ projects:
     status: published
 
   - id: test
-    status: draft
-
-  # - id: draft
-  #   status: draft
+    status: published
