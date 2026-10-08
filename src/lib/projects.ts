@@ -38,12 +38,17 @@ function getProjectData() {
 
 // Returns projects based on the visibility filter in manifest order.
 export function getProjects(filter: ProjectFilter) {
+  const isDev = process.env.NODE_ENV === "development";
+
   return getProjectData()
-    .filter((entry) =>
-      filter === "featured"
+    .filter((entry) => {
+      if (isDev && entry.status === "draft") {
+        return true;
+      }
+      return filter === "featured"
         ? entry.status === "featured"
-        : entry.status !== "draft",
-    )
+        : entry.status !== "draft";
+    })
     .map((entry) => entry.project);
 }
 

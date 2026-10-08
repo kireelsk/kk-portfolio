@@ -2,11 +2,11 @@ projects:
   - id: example
     status: featured
 
-  - id: draft
-    status: draft
-
   - id: mobile
     status: featured
+
+  - id: draft
+    status: draft
 
   - id: branding
     status: published
