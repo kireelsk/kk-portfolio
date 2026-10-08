@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { getMediaUrl } from "@/lib/media";
 import { getProject, getProjects } from "@/lib/projects";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
@@ -41,26 +39,21 @@ export default async function ProjectPage({
         />
 
         <div className="mt-10 grid md:grid-cols-3 gap-8 grid-cols-1">
-          <Image
-            src={getMediaUrl(
-              `projects/${project._meta.path}/cover-horizontal.webp`,
-            )}
-            alt=""
-            width={1600}
-            height={1200}
-            className="w-full h-auto md:col-span-2"
+          <Project.Cover
+            key={`${project._meta.path}-horizontal`}
+            project={project}
+            variant="horizontal"
+            className="md:col-span-2"
             loading="eager"
           />
 
-          <Image
-            src={getMediaUrl(
-              `projects/${project._meta.path}/cover-vertical.webp`,
-            )}
-            alt=""
-            width={1200}
-            height={1600}
-            className="w-full h-auto md:col-span-1"
+          <Project.Cover
+            key={`${project._meta.path}-vertical`}
+            project={project}
+            variant="vertical"
+            className="md:col-span-1"
             loading="eager"
+            sizes="(min-width: 768px) 33vw, 100vw"
           />
         </div>
 

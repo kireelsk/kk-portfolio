@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { getMediaUrl } from "@/lib/media";
 import { getProjects } from "@/lib/projects";
 import { Project } from "@/components/Project";
 
@@ -18,15 +16,10 @@ export default function Projects() {
           {projects.map((project, index) => (
             <li key={project._meta.path}>
               <Link href={`/projects/${project._meta.path}`}>
-                <Image
-                  className="w-full h-auto"
-                  src={getMediaUrl(
-                    `projects/${project._meta.path}/cover-vertical.webp`,
-                  )}
-                  alt=""
-                  width={1200}
-                  height={1600}
-                  loading={index < 3 ? "eager" : "lazy"}
+                <Project.Cover
+                  project={project}
+                  variant="vertical"
+                  loading={index < 4 ? "eager" : "lazy"}
                 />
                 <div className="mt-4">
                   <h2 className="text-4xl font-semibold">{project.title}</h2>

@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { getMediaUrl } from "@/lib/media";
 import { getProjects } from "@/lib/projects";
 import { Project } from "@/components/Project";
 
@@ -21,7 +19,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="mb-50">
+      {/*<section className="mb-50">
         <h2 className="mb-8 text-5xl font-semibold">Skills</h2>
 
         <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>
@@ -31,7 +29,7 @@ export default function Home() {
         <h2 className="mb-8 text-5xl font-semibold">My clients</h2>
 
         <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>
-      </section>
+      </section>*/}
 
       <section className="mb-50">
         <h2 className="mb-8 text-5xl font-semibold">Selected Projects</h2>
@@ -57,15 +55,11 @@ export default function Home() {
                   />
                 </div>
 
-                <Image
-                  className="w-full h-auto md:col-span-2"
-                  src={getMediaUrl(
-                    `projects/${project._meta.path}/cover-horizontal.webp`,
-                  )}
-                  alt=""
-                  width={1600}
-                  height={1200}
+                <Project.Cover
+                  project={project}
+                  variant="horizontal"
                   loading={index === 0 ? "eager" : "lazy"}
+                  className="md:col-span-2"
                 />
               </Link>
             </li>
