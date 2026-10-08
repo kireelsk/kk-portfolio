@@ -11,7 +11,7 @@ export default function Projects() {
           All Projects
         </h1>
 
-        <ul className="grid grid-cols-3 gap-8">
+        <ul className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {allProjects.map((project, index) => (
             <li key={project._meta.path}>
               <Link href={`/projects/${project._meta.path}`}>

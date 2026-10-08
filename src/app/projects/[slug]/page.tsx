@@ -31,7 +31,7 @@ export default async function Project({
 
         <p className="mt-4 text-xl text-neutral-300">{project.description}</p>
 
-        <div className="mt-10 grid grid-cols-3 gap-8">
+        <div className="mt-10 grid md:grid-cols-3 gap-8 grid-cols-1">
           <Image
             src={getMediaUrl(
               `projects/${project._meta.path}/cover-horizontal.webp`,
@@ -39,7 +39,7 @@ export default async function Project({
             alt=""
             width={1600}
             height={1200}
-            className="w-full h-auto col-span-2"
+            className="w-full h-auto md:col-span-2"
             loading="eager"
           />
 
@@ -50,7 +50,7 @@ export default async function Project({
             alt=""
             width={1200}
             height={1600}
-            className="w-full h-auto col-span-1"
+            className="w-full h-auto md:col-span-1"
             loading="eager"
           />
         </div>
