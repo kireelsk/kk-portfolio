@@ -19,8 +19,10 @@ function validateProjectIDs(manifestIDs: string[], mdxIDs: string[]): void {
   }
 }
 
+type ProjectFilter = "featured" | "published";
+
 // Returns featured projects from Content Collections in the order defined by the YAML manifest.
-export function getFeaturedProjects() {
+export function getProjects(filter: ProjectFilter) {
   const manifest = getProjectManifest();
 
   validateProjectIDs(
@@ -29,7 +31,11 @@ export function getFeaturedProjects() {
   );
 
   return manifest.projects
-    .filter((entry) => entry.status === "featured")
+    .filter((entry) =>
+      filter === "featured"
+        ? entry.status === "featured"
+        : entry.status !== "draft",
+    )
     .map((entry) =>
       allProjects.find((project) => project._meta.path === entry.id),
     )

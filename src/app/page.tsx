@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getMediaUrl } from "@/lib/media";
-import { getFeaturedProjects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 import { Project } from "@/components/Project";
 
 export default function Home() {
-  const featuredProjects = getFeaturedProjects();
+  const projects = getProjects("featured");
 
   return (
     <main className="p-8">
@@ -37,7 +37,7 @@ export default function Home() {
         <h2 className="mb-8 text-5xl font-semibold">Selected Projects</h2>
 
         <ul className="space-y-20">
-          {featuredProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <li key={project._meta.path}>
               <Link
                 className="grid grid-cols-1 gap-8 md:grid-cols-3"

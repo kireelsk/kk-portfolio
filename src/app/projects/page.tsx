@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getMediaUrl } from "@/lib/media";
-import { allProjects } from "content-collections";
+import { getProjects } from "@/lib/projects";
 import { Project } from "@/components/Project";
 
 export default function Projects() {
+  const projects = getProjects("published");
+
   return (
     <main className="px-10">
       <section className="mb-80">
@@ -13,7 +15,7 @@ export default function Projects() {
         </h1>
 
         <ul className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {allProjects.map((project, index) => (
+          {projects.map((project, index) => (
             <li key={project._meta.path}>
               <Link href={`/projects/${project._meta.path}`}>
                 <Image
