@@ -1,0 +1,12 @@
+projects:
+  - id: example
+    status: featured
+
+  - id: mobile
+    status: featured
+
+  - id: branding
+    status: published
+
+  - id: test
+    status: draft
