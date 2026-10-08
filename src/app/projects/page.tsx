@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getMediaUrl } from "@/lib/media";
 import { allProjects } from "content-collections";
-import { ProjectDate } from "@/components/ProjectDate";
+import { Project } from "@/components/Project";
 
 export default function Projects() {
   return (
@@ -33,7 +33,7 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  <ProjectDate
+                  <Project.Date
                     startDate={project.startDate}
                     endDate={project.endDate}
                     className="text-xl text-neutral-500"

@@ -4,7 +4,7 @@ import { getMediaUrl } from "@/lib/media";
 import { allProjects } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
-import { ProjectDate } from "@/components/ProjectDate";
+import { Project } from "@/components/Project";
 
 export function generateStaticParams() {
   return allProjects.map((project) => ({
@@ -12,7 +12,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function Project({
+export default async function ProjectPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -34,7 +34,7 @@ export default async function Project({
           {project.description}
         </p>
 
-        <ProjectDate
+        <Project.Date
           startDate={project.startDate}
           endDate={project.endDate}
           className="text-xl text-neutral-500"
