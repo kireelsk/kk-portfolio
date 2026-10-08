@@ -1,5 +1,6 @@
 import { allProjects } from "content-collections";
 import { getProjectManifest } from "./project-manifest";
+import { en } from "zod/v4/locales";
 
 // Ensures that YAML and MDX contain the same project IDs.
 function validateProjectIDs(manifestIDs: string[], mdxIDs: string[]): void {
@@ -40,4 +41,19 @@ export function getProjects(filter: ProjectFilter) {
       allProjects.find((project) => project._meta.path === entry.id),
     )
     .filter((project) => project !== undefined);
+}
+
+// Returns a project by slug if its publication status allows access.
+export function getProject(slug: string) {
+  const manifest = getProjectManifest();
+
+  const entry = manifest.projects.find((entry) => entry.id === slug);
+
+  if (!entry) return undefined;
+
+  if (entry.status === "draft" && process.env.NODE_ENV !== "development") {
+    return undefined;
+  }
+
+  return allProjects.find((project) => project._meta.path === slug);
 }

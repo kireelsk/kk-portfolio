@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getMediaUrl } from "@/lib/media";
-import { allProjects } from "content-collections";
+import { getProject, getProjects } from "@/lib/projects";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { Project } from "@/components/Project";
 
 export function generateStaticParams() {
-  return allProjects.map((project) => ({
+  return getProjects("published").map((project) => ({
     slug: project._meta.path,
   }));
 }
@@ -19,7 +19,7 @@ export default async function ProjectPage({
 }) {
   const { slug } = await params;
 
-  const project = allProjects.find((project) => project._meta.path === slug);
+  const project = getProject(slug);
 
   if (!project) notFound();
 
