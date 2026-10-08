@@ -4,6 +4,7 @@ import { getMediaUrl } from "@/lib/media";
 import { allProjects } from "content-collections";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
+import { ProjectDate } from "@/components/ProjectDate";
 
 export function generateStaticParams() {
   return allProjects.map((project) => ({
@@ -29,7 +30,15 @@ export default async function Project({
           {project.title}
         </h1>
 
-        <p className="mt-4 text-xl text-neutral-300">{project.description}</p>
+        <p className="mt-2 mb-8 text-xl text-neutral-300">
+          {project.description}
+        </p>
+
+        <ProjectDate
+          startDate={project.startDate}
+          endDate={project.endDate}
+          className="text-xl text-neutral-500"
+        />
 
         <div className="mt-10 grid md:grid-cols-3 gap-8 grid-cols-1">
           <Image

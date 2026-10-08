@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getMediaUrl } from "@/lib/media";
 import { allProjects } from "content-collections";
+import { ProjectDate } from "@/components/ProjectDate";
 
 export default function Projects() {
   return (
@@ -28,9 +29,15 @@ export default function Projects() {
                 <div className="mt-4">
                   <h2 className="text-4xl font-semibold">{project.title}</h2>
 
-                  <p className="mt-4 text-xl text-neutral-300">
+                  <p className="mt-2 mb-8 text-xl text-neutral-300">
                     {project.description}
                   </p>
+
+                  <ProjectDate
+                    startDate={project.startDate}
+                    endDate={project.endDate}
+                    className="text-xl text-neutral-500"
+                  />
                 </div>
               </Link>
             </li>
