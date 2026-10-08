@@ -1,6 +1,5 @@
 import { allProjects } from "content-collections";
 import { getProjectManifest } from "./project-manifest";
-import { en } from "zod/v4/locales";
 
 // Ensures that YAML and MDX contain the same project IDs.
 function validateProjectIDs(manifestIDs: string[], mdxIDs: string[]): void {
@@ -22,8 +21,8 @@ function validateProjectIDs(manifestIDs: string[], mdxIDs: string[]): void {
 
 type ProjectFilter = "featured" | "published";
 
-// Returns featured projects from Content Collections in the order defined by the YAML manifest.
-export function getProjects(filter: ProjectFilter) {
+// Combines MDX projects with their manifest statuses in manifest order.
+function getProjectData() {
   const manifest = getProjectManifest();
 
   validateProjectIDs(
@@ -31,23 +30,26 @@ export function getProjects(filter: ProjectFilter) {
     allProjects.map((project) => project._meta.path),
   );
 
-  return manifest.projects
+  return manifest.projects.map((entry) => ({
+    ...entry,
+    project: allProjects.find((project) => project._meta.path === entry.id)!,
+  }));
+}
+
+// Returns projects based on the visibility filter in manifest order.
+export function getProjects(filter: ProjectFilter) {
+  return getProjectData()
     .filter((entry) =>
       filter === "featured"
         ? entry.status === "featured"
         : entry.status !== "draft",
     )
-    .map((entry) =>
-      allProjects.find((project) => project._meta.path === entry.id),
-    )
-    .filter((project) => project !== undefined);
+    .map((entry) => entry.project);
 }
 
 // Returns a project by slug if its publication status allows access.
 export function getProject(slug: string) {
-  const manifest = getProjectManifest();
-
-  const entry = manifest.projects.find((entry) => entry.id === slug);
+  const entry = getProjectData().find((entry) => entry.id == slug);
 
   if (!entry) return undefined;
 
@@ -55,5 +57,5 @@ export function getProject(slug: string) {
     return undefined;
   }
 
-  return allProjects.find((project) => project._meta.path === slug);
+  return entry.project;
 }
