@@ -10,3 +10,6 @@ projects:
 
   - id: test
     status: draft
+
+  # - id: draft
+  #   status: draft
