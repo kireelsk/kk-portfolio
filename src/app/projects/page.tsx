@@ -28,11 +28,14 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                  <Project.Date
-                    startDate={project.startDate}
-                    endDate={project.endDate}
-                    className="text-xl text-neutral-500"
-                  />
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-xl text-neutral-500">
+                    <Project.Tags tags={project.tags} />
+                    <Project.Date
+                      startDate={project.startDate}
+                      endDate={project.endDate}
+                      className="text-xl text-neutral-500"
+                    />
+                  </div>
                 </div>
               </Link>
             </li>

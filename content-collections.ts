@@ -1,6 +1,7 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
 import { compileMDX } from "@content-collections/mdx";
 import { z } from "zod";
+import { projectTagSchema } from "./src/lib/project-tags";
 
 const projects = defineCollection({
   name: "projects",
@@ -14,7 +15,7 @@ const projects = defineCollection({
       client: z.string().trim().min(1).optional(),
 
       type: z.enum(["commercial", "personal"]),
-      tags: z.array(z.string().trim().min(1)).min(1),
+      tags: z.array(projectTagSchema).min(1),
 
       startDate: z
         .string()

@@ -1,0 +1,18 @@
+tags:
+  - id: draft
+    label: Draft
+
+  - id: 3d
+    label: 3D
+
+  - id: ui-ux
+    label: UI/UX
+
+  - id: branding
+    label: Branding
+
+  - id: motion
+    label: Motion design
+
+  - id: interior
+    label: Interior
