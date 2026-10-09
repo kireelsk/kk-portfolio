@@ -42,7 +42,7 @@ const projects = defineCollection({
         return data.endDate >= data.startDate;
       },
       {
-        message: "\x1b[31mendDate cannot be earlier than startDate\x1b[0m",
+        error: "\x1b[31mendDate cannot be earlier than startDate\x1b[0m",
         path: ["endDate"],
       },
     ),
