@@ -1,4 +1,4 @@
-import { formatProjectDate } from "@/lib/format-project-date";
+import { formatProjectDate } from "@/lib/project-date";
 
 type ProjectDateProps = {
   startDate?: string;
