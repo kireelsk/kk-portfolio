@@ -23,7 +23,7 @@ function validateProjectIDs(manifestIDs: string[], mdxIDs: string[]): void {
 
 type ProjectFilter = "featured" | "published";
 
-// Combines MDX projects with their manifest statuses in manifest order.
+// Validates and combines MDX projects with manifest statuses in manifest order.
 function getProjectData() {
   const manifest = getProjectManifest();
 
@@ -32,10 +32,23 @@ function getProjectData() {
     allProjects.map((project) => project._meta.path),
   );
 
-  return manifest.projects.map((entry) => ({
-    ...entry,
-    project: allProjects.find((project) => project._meta.path === entry.id)!,
-  }));
+  return manifest.projects.map((entry) => {
+    const project = allProjects.find(
+      (project) => project._meta.path === entry.id,
+    )!;
+
+    if (
+      process.env.NODE_ENV === "production" &&
+      entry.status !== "draft" &&
+      project.tags.includes("draft")
+    ) {
+      throw new Error(
+        `Project "${entry.id}" has tag "draft" but status "${entry.status}". Remove the tag or change the project status.`,
+      );
+    }
+
+    return { ...entry, project };
+  });
 }
 
 // Returns projects based on the visibility filter in manifest order.
