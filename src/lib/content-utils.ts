@@ -7,11 +7,34 @@ import { z } from "zod";
 export const contentIDSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 
 // Reads a YAML file from content/ and validates its structure.
+// Reports validation errors with the filename and field paths.
 export function readYAML<T>(filename: string, schema: z.ZodType<T>): T {
   const filePath = join(process.cwd(), "content", filename);
   const fileContent = readFileSync(filePath, "utf-8");
 
-  return schema.parse(parse(fileContent));
+  const result = schema.safeParse(parse(fileContent));
+
+  if (!result.success) {
+    const errors = result.error.issues.map((issue) => {
+      const path = issue.path.reduce<string>(
+        (acc, segment) =>
+          typeof segment === "number"
+            ? `${acc}[${segment}]`
+            : acc
+              ? `${acc}.${String(segment)}`
+              : String(segment),
+        "",
+      );
+
+      return `${path || "(root)"}: ${issue.message}`;
+    });
+
+    const message = `Content validation failed: content/${filename}\n\n${errors.join("\n")}`;
+
+    throw new Error(message);
+  }
+
+  return result.data;
 }
 
 // Validates unique IDs in a collection of content items.

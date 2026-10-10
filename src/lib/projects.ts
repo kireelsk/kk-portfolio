@@ -8,7 +8,9 @@ function validateProjectIDs(manifestIDs: string[], mdxIDs: string[]): void {
 
   for (const id of registered) {
     if (!existing.has(id)) {
-      throw new Error(`Project "${id}" has no matching MDX file.`);
+      throw new Error(
+        `Project "${id}" has no matching MDX file: content/projects/${id}.mdx`,
+      );
     }
   }
 
@@ -54,7 +56,7 @@ export function getProjects(filter: ProjectFilter) {
 
 // Returns a project by slug if its publication status allows access.
 export function getProject(slug: string) {
-  const entry = getProjectData().find((entry) => entry.id == slug);
+  const entry = getProjectData().find((entry) => entry.id === slug);
 
   if (!entry) return undefined;
 

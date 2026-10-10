@@ -12,7 +12,7 @@ export const manifestSchema = z.object({
     )
     // Rejects duplicate project IDs.
     .superRefine((projects, ctx) => {
-      validateUniqueIDs(projects, ctx, "projects");
+      validateUniqueIDs(projects, ctx, "project");
     }),
 });
 
