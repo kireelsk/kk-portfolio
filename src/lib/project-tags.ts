@@ -26,3 +26,23 @@ const tagsIDs = new Set(projectTags.map((tag) => tag.id));
 export const projectTagSchema = z.string().refine((tag) => tagsIDs.has(tag), {
   error: "Unknown project tag. Check content/tags.yaml.",
 });
+
+// Validates a non-empty list of unique project tags.
+export const projectTagsSchema = z
+  .array(projectTagSchema)
+  .min(1)
+  .superRefine((tags, ctx) => {
+    const seen = new Set<string>();
+
+    tags.forEach((tag, index) => {
+      if (seen.has(tag)) {
+        ctx.addIssue({
+          code: "custom",
+          message: `Duplicate project tag: "${tag}"`,
+          path: [index],
+        });
+      }
+
+      seen.add(tag);
+    });
+  });
