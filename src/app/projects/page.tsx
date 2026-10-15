@@ -1,9 +1,49 @@
 import Link from "next/link";
-import { getProjects } from "@/lib/projects";
+import { ProjectGallery } from "@/components/Project/Gallery";
 import { Project } from "@/components/Project";
+import { getProjects } from "@/lib/projects";
+import { projectTags } from "@/lib/project-tags";
 
 export default function Projects() {
   const projects = getProjects("published");
+
+  // Excludes the draft filter from production.
+  const tags =
+    process.env.NODE_ENV === "development"
+      ? projectTags
+      : projectTags.filter((tag) => tag.id !== "draft");
+
+  // Prepares project cards on the server for client-side filtering.
+  const items = projects.map((project, index) => ({
+    id: project._meta.path,
+    tags: project.tags,
+    content: (
+      <Link href={`/projects/${project._meta.path}`}>
+        <Project.Cover
+          project={project}
+          variant="vertical"
+          loading={index < 4 ? "eager" : "lazy"}
+        />
+
+        <div className="mt-4">
+          <h2 className="text-4xl font-semibold">{project.title}</h2>
+
+          <p className="mt-2 mb-8 text-xl text-neutral-300">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-xl text-neutral-500">
+            <Project.Tags tags={project.tags} />
+            <Project.Date
+              startDate={project.startDate}
+              endDate={project.endDate}
+              className="text-xl text-neutral-500"
+            />
+          </div>
+        </div>
+      </Link>
+    ),
+  }));
 
   return (
     <main className="px-10">
@@ -11,36 +51,7 @@ export default function Projects() {
         <h1 className="mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
           All Projects
         </h1>
-
-        <ul className="grid grid-cols-1 gap-8 md:grid-cols-4">
-          {projects.map((project, index) => (
-            <li key={project._meta.path}>
-              <Link href={`/projects/${project._meta.path}`}>
-                <Project.Cover
-                  project={project}
-                  variant="vertical"
-                  loading={index < 4 ? "eager" : "lazy"}
-                />
-                <div className="mt-4">
-                  <h2 className="text-4xl font-semibold">{project.title}</h2>
-
-                  <p className="mt-2 mb-8 text-xl text-neutral-300">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-xl text-neutral-500">
-                    <Project.Tags tags={project.tags} />
-                    <Project.Date
-                      startDate={project.startDate}
-                      endDate={project.endDate}
-                      className="text-xl text-neutral-500"
-                    />
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <ProjectGallery items={items} tags={tags} />
       </section>
     </main>
   );
