@@ -46,7 +46,7 @@ export default function Projects() {
   }));
 
   return (
-    <main className="px-10">
+    <main className="px-10 flex-1">
       <section className="mb-80">
         <h1 className="mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
           All Projects

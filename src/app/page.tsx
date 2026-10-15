@@ -6,7 +6,7 @@ export default function Home() {
   const projects = getProjects("featured");
 
   return (
-    <main className="p-8">
+    <main className="p-8 flex-1">
       <section className="mb-80">
         <h1 className="mt-10 mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
           Designer portfolio
