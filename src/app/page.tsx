@@ -6,8 +6,8 @@ export default function Home() {
   const projects = getProjects("featured");
 
   return (
-    <main className="p-8 flex-1">
-      <section className="mb-80">
+    <main className="grid min-w-0 grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
+      <section className="col-span-full">
         <h1 className="mt-10 mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
           Designer portfolio
         </h1>
@@ -19,19 +19,19 @@ export default function Home() {
         </p>
       </section>
 
-      {/*<section className="mb-50">
+      {/*<section className="col-span-full">
         <h2 className="mb-8 text-5xl font-semibold">Skills</h2>
 
         <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>
       </section>
 
-      <section className="mb-50">
+      <section className="col-span-full">
         <h2 className="mb-8 text-5xl font-semibold">My clients</h2>
 
         <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>
       </section>*/}
 
-      <section className="mb-50">
+      <section className="col-span-full">
         <h2 className="mb-8 text-5xl font-semibold">Selected Projects</h2>
 
         <ul className="space-y-20">
@@ -77,7 +77,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="mb-50">
+      <section className="col-span-full">
         <h2 className="mb-8 text-5xl font-semibold">Contacts</h2>
 
         <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>

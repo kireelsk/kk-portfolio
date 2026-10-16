@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-background px-6 py-4 lg:hidden">
+    <header className="sticky top-0 z-50 flex items-center justify-between bg-background py-4 lg:hidden">
       <Link href="/" className="text-xl">
         Logo
       </Link>

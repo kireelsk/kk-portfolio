@@ -46,8 +46,8 @@ export default function Projects() {
   }));
 
   return (
-    <main className="px-10 flex-1">
-      <section className="mb-80">
+    <main className="grid min-w-0 grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
+      <section className="col-span-full">
         <h1 className="mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
           All Projects
         </h1>
