@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getProjects } from "@/lib/projects";
-import { Project } from "@/components/Project";
+import { ProjectPreview } from "@/components/Project/Preview";
 
 export default function Home() {
   const projects = getProjects("featured");
@@ -32,36 +32,12 @@ export default function Home() {
 
         <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
           {projects.map((project, index) => (
-            <li
+            <ProjectPreview
+              project={project}
               key={project._meta.path}
+              loading={index === 0 ? "eager" : "lazy"}
               className="col-span-full grid grid-cols-subgrid"
-            >
-              <Link
-                href={`/projects/${project._meta.path}`}
-                className="col-span-full grid grid-cols-subgrid gap-y-10"
-              >
-                <div className="col-span-full self-end md:col-span-3 lg:col-span-4">
-                  <h3 className="mb-2">{project.title}</h3>
-
-                  <p className="mb-8">{project.description}</p>
-
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-base">
-                    <Project.Tags tags={project.tags} />
-                    <Project.Date
-                      startDate={project.startDate}
-                      endDate={project.endDate}
-                    />
-                  </div>
-                </div>
-
-                <Project.Cover
-                  slug={project._meta.path}
-                  variant="horizontal"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  className="col-span-full md:col-span-5 lg:col-span-8"
-                />
-              </Link>
-            </li>
+            />
           ))}
         </ul>
 

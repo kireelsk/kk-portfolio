@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { getProjects } from "@/lib/projects";
-import { Project } from "@/components/Project";
+import { ProjectCover } from "./Cover";
 import { ProjectMeta } from "./Meta";
 
 type ProjectCardProps = {
@@ -11,7 +11,7 @@ type ProjectCardProps = {
 export function ProjectCard({ project, loading = "lazy" }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project._meta.path}`}>
-      <Project.Cover
+      <ProjectCover
         slug={project._meta.path}
         variant="vertical"
         loading={loading}

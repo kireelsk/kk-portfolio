@@ -1,36 +1,40 @@
 import Link from "next/link";
-import { Project } from "@/components/Project";
+import { ProjectCover } from "./Cover";
+import { ProjectMeta } from "./Meta";
 import type { getProjects } from "@/lib/projects";
 
-type CatalogProjectCardProps = {
+type ProjectPreviewProps = {
   project: ReturnType<typeof getProjects>[number];
   loading?: "eager" | "lazy";
+  className?: string;
 };
 
-export function PreviewProject({
+export function ProjectPreview({
   project,
   loading = "lazy",
-}: CatalogProjectCardProps) {
+  className,
+}: ProjectPreviewProps) {
   return (
-    <Link href={`/projects/${project._meta.path}`}>
-      <Project.Cover
-        slug={project._meta.path}
-        variant="vertical"
-        loading={loading}
-      />
+    <li className={className}>
+      <Link
+        href={`/projects/${project._meta.path}`}
+        className="col-span-full grid grid-cols-subgrid"
+      >
+        <div className="col-span-full self-end md:col-span-3 lg:col-span-4">
+          <h3 className="mb-2">{project.title}</h3>
 
-      <div className="mt-4">
-        <h2 className="mb-2">{project.title}</h2>
-        <p className="mb-8">{project.description}</p>
+          <p className="mb-8">{project.description}</p>
 
-        <div className="col-span-full flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-base">
-          <Project.Tags tags={project.tags} />
-          <Project.Date
-            startDate={project.startDate}
-            endDate={project.endDate}
-          />
+          <ProjectMeta project={project} />
         </div>
-      </div>
-    </Link>
+
+        <ProjectCover
+          slug={project._meta.path}
+          variant="horizontal"
+          loading={loading}
+          className="col-span-full md:col-span-5 lg:col-span-8"
+        />
+      </Link>
+    </li>
   );
 }
