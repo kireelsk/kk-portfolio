@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
-      <body className="grid min-h-screen grid-cols-1 grid-rows-[auto_1fr_auto] gap-x-6 p-6 lg:grid-cols-[7rem_minmax(0,1fr)] lg:grid-rows-[1fr_auto]">
+      <body className="site-layout">
         <Header />
         <Sidebar />
         {children}
