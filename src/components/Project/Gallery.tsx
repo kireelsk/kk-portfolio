@@ -47,11 +47,19 @@ export function ProjectGallery({ items, tags }: GalleryProps) {
 
       <ul className="col-span-full grid grid-cols-subgrid gap-y-8">
         {filterItems.map((item) => (
-          <li key={item.id} className="col-span-4 md:col-span-4 lg:col-span-3">
+          <li key={item.id} className="col-span-4 md:col-span-4 lg:col-span-4">
             {item.content}
           </li>
         ))}
       </ul>
+
+      {/*<ul className="col-span-full min-w-0 grid grid-flow-col auto-cols-[100%] gap-4 overflow-x-auto snap-x snap-mandatory md:auto-cols-[calc((100%-1rem)/2)] lg:auto-cols-[calc((100%-2rem)/3)]">
+        {filterItems.map((item) => (
+          <li key={item.id} className="min-w-0 snap-start">
+            {item.content}
+          </li>
+        ))}
+      </ul>*/}
     </>
   );
 }
