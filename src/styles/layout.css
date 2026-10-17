@@ -1,0 +1,13 @@
+@layer components {
+  .content-grid {
+    @apply grid grid-cols-4 gap-x-4;
+
+    @variant md {
+      @apply grid-cols-8;
+    }
+
+    @variant lg {
+      @apply grid-cols-12;
+    }
+  }
+}

@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <main className="home-page min-w-0">
-      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mt-140 mb-40">
+      <section className="content-grid mt-140 mb-40">
         <h1 className="col-span-full mb-10">
           I make things
           <br />
@@ -21,13 +21,13 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
+      <section className="content-grid mb-40">
         <h2 className="col-span-full mb-5">Skills</h2>
 
         <p className="col-span-full lg:col-span-6">Coming soon...</p>
       </section>
 
-      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
+      <section className="content-grid mb-40">
         <h2 className="col-span-full mb-5">Selected Projects</h2>
 
         <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
@@ -49,7 +49,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
+      <section className="content-grid mb-40">
         <h2 className="col-span-full mb-5">Contacts</h2>
 
         <p className="col-span-full lg:col-span-6">Coming soon...</p>

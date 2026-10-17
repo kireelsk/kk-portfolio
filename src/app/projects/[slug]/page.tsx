@@ -24,7 +24,7 @@ export default async function ProjectPage({
 
   return (
     <main className="project-page min-w-0">
-      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
+      <section className="content-grid">
         <h1 className="col-span-full mb-2">{project.title}</h1>
 
         <p className="col-span-full mb-8">{project.description}</p>
