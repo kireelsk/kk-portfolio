@@ -1,0 +1,76 @@
+@layer base {
+  body {
+    @apply font-sans font-normal;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight;
+  }
+
+  p {
+    @apply text-xl tracking-tight;
+  }
+}
+
+@layer components {
+  .home-page h1 {
+    @apply text-5xl;
+
+    @variant lg {
+      @apply text-8xl;
+    }
+  }
+
+  .home-page h2 {
+    @apply text-4xl;
+
+    @variant lg {
+      @apply text-6xl;
+    }
+  }
+
+  .home-page h3 {
+    @apply text-3xl;
+
+    @variant lg {
+      @apply text-4xl;
+    }
+  }
+
+  .projects-page h1 {
+    @apply text-4xl;
+
+    @variant lg {
+      @apply text-6xl;
+    }
+  }
+
+  .projects-page h2 {
+    @apply text-3xl;
+
+    @variant lg {
+      @apply text-4xl;
+    }
+  }
+
+  .project-page h1 {
+    @apply text-4xl;
+
+    @variant lg {
+      @apply text-6xl;
+    }
+  }
+
+  .project-page h2 {
+    @apply text-3xl;
+
+    @variant lg {
+      @apply text-4xl;
+    }
+  }
+}

@@ -43,7 +43,7 @@ export default function Projects() {
   }));
 
   return (
-    <main className="min-w-0">
+    <main className="projects-page min-w-0">
       <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
         <h1 className="col-span-full mb-5">All Projects</h1>
 

@@ -1,43 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--color-stone-50);
-  --color-foreground: var(--color-zinc-950);
-
-  --font-sans: var(--font-inter), Helvetica, Arial, sans-serif;
-  --font-heading: var(--font-inter-tight), Helvetica, Arial, sans-serif;
-}
-
-body {
-  @apply bg-background text-foreground font-sans;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-heading tracking-tight;
-}
-
-h1 {
-  @apply text-5xl lg:text-8xl;
-}
-
-h2 {
-  @apply text-4xl lg:text-7xl;
-}
-
-h3 {
-  @apply text-2xl lg:text-5xl;
-}
-
-p {
-  @apply text-xl tracking-tight;
-}
+@import "../styles/theme.css";
+@import "../styles/base.css";
+@import "../styles/typography.css";
