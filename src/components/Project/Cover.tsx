@@ -5,11 +5,7 @@ import { useState } from "react";
 import { getMediaUrl } from "@/lib/media";
 
 type CoverProps = {
-  project: {
-    _meta: {
-      path: string;
-    };
-  };
+  slug: string;
   loading?: "eager" | "lazy";
   variant: "horizontal" | "vertical";
   sizes?: string;
@@ -30,7 +26,7 @@ const defaultSizes = {
  * Displays a project cover with a gray fallback.
  */
 export function ProjectCover({
-  project,
+  slug,
   variant,
   loading = "lazy",
   sizes,
@@ -39,9 +35,7 @@ export function ProjectCover({
   const [hasError, setHasError] = useState(false);
   const { width, height } = dimensions[variant];
 
-  const src = getMediaUrl(
-    `projects/${project._meta.path}/cover-${variant}.webp`,
-  );
+  const src = getMediaUrl(`projects/${slug}/cover-${variant}.webp`);
 
   const [isLoaded, setIsLoaded] = useState(false);
 

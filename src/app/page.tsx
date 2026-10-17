@@ -55,7 +55,7 @@ export default function Home() {
                 </div>
 
                 <Project.Cover
-                  project={project}
+                  slug={project._meta.path}
                   variant="horizontal"
                   loading={index === 0 ? "eager" : "lazy"}
                   className="col-span-full md:col-span-5 lg:col-span-8"

@@ -39,7 +39,7 @@ export default async function ProjectPage({
         <div className="col-span-full mt-10 grid grid-cols-subgrid gap-y-8">
           <Project.Cover
             key={`${project._meta.path}-horizontal`}
-            project={project}
+            slug={project._meta.path}
             variant="horizontal"
             className="col-span-full md:col-span-5 lg:col-span-8"
             loading="eager"
@@ -47,7 +47,7 @@ export default async function ProjectPage({
 
           <Project.Cover
             key={`${project._meta.path}-vertical`}
-            project={project}
+            slug={project._meta.path}
             variant="vertical"
             className="col-span-full md:col-span-3 lg:col-span-4"
             loading="eager"

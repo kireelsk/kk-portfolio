@@ -20,7 +20,7 @@ export default function Projects() {
     content: (
       <Link href={`/projects/${project._meta.path}`}>
         <Project.Cover
-          project={project}
+          slug={project._meta.path}
           variant="vertical"
           loading={index < 4 ? "eager" : "lazy"}
         />
