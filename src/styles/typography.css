@@ -13,7 +13,11 @@
   }
 
   p {
-    @apply text-xl tracking-tight;
+    @apply text-lg tracking-tight;
+
+    @variant lg {
+      @apply text-xl;
+    }
   }
 }
 
