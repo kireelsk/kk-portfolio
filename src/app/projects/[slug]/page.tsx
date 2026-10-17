@@ -2,7 +2,8 @@ import Link from "next/link";
 import { getProject, getProjects } from "@/lib/projects";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
-import { Project } from "@/components/Project";
+import { ProjectCover } from "@/components/Project/Cover";
+import { ProjectMeta } from "@/components/Project/Meta";
 
 export function generateStaticParams() {
   return getProjects("published").map((project) => ({
@@ -28,16 +29,12 @@ export default async function ProjectPage({
 
         <p className="col-span-full mb-8">{project.description}</p>
 
-        <div className="col-span-full flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-base">
-          <Project.Tags tags={project.tags} />
-          <Project.Date
-            startDate={project.startDate}
-            endDate={project.endDate}
-          />
+        <div className="col-span-full">
+          <ProjectMeta project={project} />
         </div>
 
         <div className="col-span-full mt-10 grid grid-cols-subgrid gap-y-8">
-          <Project.Cover
+          <ProjectCover
             key={`${project._meta.path}-horizontal`}
             slug={project._meta.path}
             variant="horizontal"
@@ -45,7 +42,7 @@ export default async function ProjectPage({
             loading="eager"
           />
 
-          <Project.Cover
+          <ProjectCover
             key={`${project._meta.path}-vertical`}
             slug={project._meta.path}
             variant="vertical"
