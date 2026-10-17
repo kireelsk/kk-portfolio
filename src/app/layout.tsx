@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "cyrillic"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
       <body className="grid min-h-screen grid-cols-1 grid-rows-[auto_1fr_auto] gap-x-6 p-6 lg:grid-cols-[7rem_minmax(0,1fr)] lg:grid-rows-[1fr_auto]">
         <Header />

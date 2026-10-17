@@ -26,18 +26,15 @@ export default function Projects() {
         />
 
         <div className="mt-4">
-          <h2 className="text-4xl font-semibold">{project.title}</h2>
+          <h2 className="mb-2">{project.title}</h2>
 
-          <p className="mt-2 mb-8 text-xl text-neutral-300">
-            {project.description}
-          </p>
+          <p className="mb-8">{project.description}</p>
 
-          <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-xl text-neutral-500">
+          <div className="col-span-full flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-base">
             <Project.Tags tags={project.tags} />
             <Project.Date
               startDate={project.startDate}
               endDate={project.endDate}
-              className="text-xl text-neutral-500"
             />
           </div>
         </div>
@@ -48,9 +45,7 @@ export default function Projects() {
   return (
     <main className="min-w-0">
       <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
-        <h1 className="col-span-full text-5xl font-semibold tracking-tight md:text-7xl mb-5">
-          All Projects
-        </h1>
+        <h1 className="col-span-full mb-5">All Projects</h1>
 
         <ProjectGallery items={items} tags={tags} />
       </section>

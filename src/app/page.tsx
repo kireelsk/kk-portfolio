@@ -7,30 +7,28 @@ export default function Home() {
 
   return (
     <main className="min-w-0">
-      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mt-160 mb-40">
-        <h1 className="col-span-full text-5xl md:text-7xl font-semibold tracking-tight mb-5">
-          Designer portfolio
+      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mt-140 mb-40">
+        <h1 className="col-span-full mb-10">
+          I make things
+          <br />
+          better – by <i>design</i>
         </h1>
 
-        <p className="col-span-full lg:col-span-6 text-xl text-neutral-300">
-          Visual identities, motion and digital experiences.
-          <br />
-          Exploring the intersection of design, technology and storytelling.
+        <p className="col-span-full lg:col-span-6">
+          I work across disciplines because each brings a different way to
+          approach an idea. I learn by making, exploring new possibilities and
+          using what I discover to make things better.
         </p>
       </section>
 
       <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
-        <h2 className="col-span-full text-5xl font-semibold mb-5">Skills</h2>
+        <h2 className="col-span-full mb-5">Skills</h2>
 
-        <p className="col-span-full lg:col-span-6 text-xl text-neutral-500">
-          Coming soon...
-        </p>
+        <p className="col-span-full lg:col-span-6">Coming soon...</p>
       </section>
 
       <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
-        <h2 className="col-span-full text-5xl font-semibold mb-10">
-          Selected Projects
-        </h2>
+        <h2 className="col-span-full mb-5">Selected Projects</h2>
 
         <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
           {projects.map((project, index) => (
@@ -43,18 +41,15 @@ export default function Home() {
                 className="col-span-full grid grid-cols-subgrid gap-y-10"
               >
                 <div className="col-span-full self-end md:col-span-3 lg:col-span-4">
-                  <h3 className="text-3xl font-semibold">{project.title}</h3>
+                  <h3 className="mb-2">{project.title}</h3>
 
-                  <p className="mt-2 mb-8 text-xl text-neutral-300">
-                    {project.description}
-                  </p>
+                  <p className="mb-8">{project.description}</p>
 
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-xl text-neutral-500">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-base">
                     <Project.Tags tags={project.tags} />
                     <Project.Date
                       startDate={project.startDate}
                       endDate={project.endDate}
-                      className="text-xl text-neutral-500"
                     />
                   </div>
                 </div>
@@ -79,11 +74,9 @@ export default function Home() {
       </section>
 
       <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
-        <h2 className="col-span-full text-5xl font-semibold mb-5">Contacts</h2>
+        <h2 className="col-span-full mb-5">Contacts</h2>
 
-        <p className="col-span-full lg:col-span-6 text-xl text-neutral-500">
-          Coming soon...
-        </p>
+        <p className="col-span-full lg:col-span-6">Coming soon...</p>
       </section>
     </main>
   );
