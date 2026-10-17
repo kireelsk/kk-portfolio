@@ -6,42 +6,43 @@ export default function Home() {
   const projects = getProjects("featured");
 
   return (
-    <main className="grid min-w-0 grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
-      <section className="col-span-full">
-        <h1 className="mt-10 mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
+    <main className="min-w-0">
+      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mt-160 mb-40">
+        <h1 className="col-span-full text-5xl md:text-7xl font-semibold tracking-tight mb-5">
           Designer portfolio
         </h1>
 
-        <p className="max-w-150 text-xl text-neutral-300">
+        <p className="col-span-full lg:col-span-6 text-xl text-neutral-300">
           Visual identities, motion and digital experiences.
           <br />
           Exploring the intersection of design, technology and storytelling.
         </p>
       </section>
 
-      {/*<section className="col-span-full">
-        <h2 className="mb-8 text-5xl font-semibold">Skills</h2>
+      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
+        <h2 className="col-span-full text-5xl font-semibold mb-5">Skills</h2>
 
-        <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>
+        <p className="col-span-full lg:col-span-6 text-xl text-neutral-500">
+          Coming soon...
+        </p>
       </section>
 
-      <section className="col-span-full">
-        <h2 className="mb-8 text-5xl font-semibold">My clients</h2>
+      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
+        <h2 className="col-span-full text-5xl font-semibold mb-10">
+          Selected Projects
+        </h2>
 
-        <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>
-      </section>*/}
-
-      <section className="col-span-full">
-        <h2 className="mb-8 text-5xl font-semibold">Selected Projects</h2>
-
-        <ul className="space-y-20">
+        <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
           {projects.map((project, index) => (
-            <li key={project._meta.path}>
+            <li
+              key={project._meta.path}
+              className="col-span-full grid grid-cols-subgrid"
+            >
               <Link
-                className="grid grid-cols-1 gap-8 md:grid-cols-3"
                 href={`/projects/${project._meta.path}`}
+                className="col-span-full grid grid-cols-subgrid gap-y-10"
               >
-                <div className="md:col-span-1 self-end">
+                <div className="col-span-full self-end md:col-span-3 lg:col-span-4">
                   <h3 className="text-3xl font-semibold">{project.title}</h3>
 
                   <p className="mt-2 mb-8 text-xl text-neutral-300">
@@ -62,7 +63,7 @@ export default function Home() {
                   project={project}
                   variant="horizontal"
                   loading={index === 0 ? "eager" : "lazy"}
-                  className="md:col-span-2"
+                  className="col-span-full md:col-span-5 lg:col-span-8"
                 />
               </Link>
             </li>
@@ -71,16 +72,18 @@ export default function Home() {
 
         <Link
           href="/projects"
-          className="mt-20 inline-block text-xl text-neutral-500 hover:underline"
+          className="col-span-full mt-20 inline-block text-xl text-neutral-500 hover:underline"
         >
           All Projects
         </Link>
       </section>
 
-      <section className="col-span-full">
-        <h2 className="mb-8 text-5xl font-semibold">Contacts</h2>
+      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12 mb-40">
+        <h2 className="col-span-full text-5xl font-semibold mb-5">Contacts</h2>
 
-        <p className="max-w-150 text-xl text-neutral-500">Coming soon...</p>
+        <p className="col-span-full lg:col-span-6 text-xl text-neutral-500">
+          Coming soon...
+        </p>
       </section>
     </main>
   );

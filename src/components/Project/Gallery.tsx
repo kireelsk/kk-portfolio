@@ -24,7 +24,7 @@ export function ProjectGallery({ items, tags }: GalleryProps) {
 
   return (
     <>
-      <div className="mb-8 flex flex-wrap gap-10">
+      <div className="col-span-full mb-10 flex flex-wrap gap-6">
         <button
           type="button"
           onClick={() => setActiveTag(null)}
@@ -45,9 +45,11 @@ export function ProjectGallery({ items, tags }: GalleryProps) {
         ))}
       </div>
 
-      <ul className="grid grid-cols-1 gap-8 md:grid-cols-4">
+      <ul className="col-span-full grid grid-cols-subgrid gap-y-8">
         {filterItems.map((item) => (
-          <li key={item.id}>{item.content}</li>
+          <li key={item.id} className="col-span-4 md:col-span-4 lg:col-span-3">
+            {item.content}
+          </li>
         ))}
       </ul>
     </>

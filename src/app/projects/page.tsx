@@ -46,11 +46,12 @@ export default function Projects() {
   }));
 
   return (
-    <main className="grid min-w-0 grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
-      <section className="col-span-full">
-        <h1 className="mb-6 text-5xl md:text-7xl font-semibold tracking-tight">
+    <main className="min-w-0">
+      <section className="grid grid-cols-4 gap-x-4 md:grid-cols-8 lg:grid-cols-12">
+        <h1 className="col-span-full text-5xl font-semibold tracking-tight md:text-7xl mb-5">
           All Projects
         </h1>
+
         <ProjectGallery items={items} tags={tags} />
       </section>
     </main>
