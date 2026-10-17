@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Project } from "@/components/Project";
 import type { getProjects } from "@/lib/projects";
+import { Project } from "@/components/Project";
+import { ProjectMeta } from "./Meta";
 
 type ProjectCardProps = {
   project: ReturnType<typeof getProjects>[number];
@@ -20,13 +21,7 @@ export function ProjectCard({ project, loading = "lazy" }: ProjectCardProps) {
         <h2 className="mb-2">{project.title}</h2>
         <p className="mb-8">{project.description}</p>
 
-        <div className="col-span-full flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-base">
-          <Project.Tags tags={project.tags} />
-          <Project.Date
-            startDate={project.startDate}
-            endDate={project.endDate}
-          />
-        </div>
+        <ProjectMeta project={project} />
       </div>
     </Link>
   );
