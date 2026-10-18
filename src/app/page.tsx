@@ -36,7 +36,7 @@ export default function Home() {
               project={project}
               key={project._meta.path}
               loading={index === 0 ? "eager" : "lazy"}
-              className="col-span-full grid grid-cols-subgrid"
+              className="project-preview col-span-full grid grid-cols-subgrid"
             />
           ))}
         </ul>

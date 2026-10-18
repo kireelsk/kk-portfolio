@@ -1,8 +1,4 @@
 @layer base {
-  body {
-    @apply font-sans font-normal;
-  }
-
   h1,
   h2,
   h3,
@@ -46,6 +42,14 @@
     }
   }
 
+  .project-preview h3 {
+    @apply text-4xl;
+
+    @variant lg {
+      @apply text-6xl;
+    }
+  }
+
   .projects-page h1 {
     @apply text-4xl;
 
@@ -54,7 +58,7 @@
     }
   }
 
-  .projects-page h2 {
+  .project-card h2 {
     @apply text-3xl;
 
     @variant lg {

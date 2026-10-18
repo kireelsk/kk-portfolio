@@ -17,7 +17,11 @@ export default function Projects() {
     id: project._meta.path,
     tags: project.tags,
     content: (
-      <ProjectCard project={project} loading={index < 4 ? "eager" : "lazy"} />
+      <ProjectCard
+        project={project}
+        loading={index < 4 ? "eager" : "lazy"}
+        className="project-card"
+      />
     ),
   }));
 
