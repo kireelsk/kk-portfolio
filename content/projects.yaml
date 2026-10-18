@@ -1,15 +1,15 @@
 projects:
-  - id: example
+  - id: morrow
     status: featured
 
-  - id: mobile
+  - id: vela
     status: featured
 
-  - id: draft
+  - id: fieldnote
     status: draft
 
-  - id: branding
+  - id: tide
     status: published
 
-  - id: test
+  - id: forma
     status: published
