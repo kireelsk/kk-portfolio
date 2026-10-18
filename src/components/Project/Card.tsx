@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { getProjects } from "@/lib/projects";
 import { ProjectCover } from "./Cover";
-import { ProjectMeta } from "./Meta";
+import { ProjectDate } from "./Date";
+// import { ProjectMeta } from "./Meta";
 
 type ProjectCardProps = {
   project: ReturnType<typeof getProjects>[number];
@@ -18,10 +19,16 @@ export function ProjectCard({ project, loading }: ProjectCardProps) {
       />
 
       <div className="mt-4">
-        <h2 className="mb-2">{project.title}</h2>
-        <p className="mb-8">{project.description}</p>
+        <div className="grid grid-cols-[minmax(0,1fr)_90px] items-start gap-4">
+          <h2 className="mb-2">{project.title}</h2>
+          <ProjectDate
+            startDate={project.startDate}
+            endDate={project.endDate}
+            className="text-right whitespace-nowrap"
+          />
+        </div>
 
-        <ProjectMeta project={project} />
+        <p className="mb-8">{project.description}</p>
       </div>
     </Link>
   );
