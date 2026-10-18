@@ -1,4 +1,5 @@
 import { SiteLogo } from "./SiteLogo";
+import { Navigation } from "./Navigation";
 
 export default function Header() {
   return (
@@ -8,7 +9,9 @@ export default function Header() {
       <details className="relative">
         <summary className="cursor-pointer list-none">Menu</summary>
 
-        <nav className="absolute right-0 top-full mt-4 bg-background p-4"></nav>
+        <div className="absolute right-0 top-full mt-4 bg-background p-4">
+          <Navigation />
+        </div>
       </details>
     </header>
   );

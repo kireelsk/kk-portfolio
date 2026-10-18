@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <main className="home-page min-w-0">
-      <section className="content-grid mt-140 mb-40">
+      <section id="about" className="content-grid mt-140 mb-40">
         <h1 className="col-span-full mb-10">
           I make things
           <br />
@@ -27,8 +27,8 @@ export default function Home() {
         <p className="col-span-full lg:col-span-6">Coming soon...</p>
       </section>
 
-      <section className="content-grid mb-40">
-        <h2 className="col-span-full mb-5">Selected Projects</h2>
+      <section id="best-works" className="content-grid mb-40">
+        <h2 className="col-span-full mb-5">Best Works</h2>
 
         <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
           {projects.map((project, index) => (
@@ -52,7 +52,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="content-grid mb-40">
+      <section id="contact" className="content-grid mb-40">
         <h2 className="col-span-full mb-5">Contacts</h2>
 
         <p className="col-span-full lg:col-span-6">Coming soon...</p>

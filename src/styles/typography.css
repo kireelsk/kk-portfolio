@@ -8,6 +8,14 @@
     @apply font-heading tracking-tight;
   }
 
+  a {
+    @apply text-lg tracking-tight;
+
+    @variant lg {
+      @apply text-lg;
+    }
+  }
+
   p {
     @apply text-lg tracking-tight;
 

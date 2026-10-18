@@ -1,4 +1,8 @@
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply font-sans font-normal;
     @apply bg-background text-foreground;

@@ -1,9 +1,14 @@
 import { SiteLogo } from "./SiteLogo";
+import { Navigation } from "./Navigation";
 
 export default function Sidebar() {
   return (
-    <aside className="hidden self-start lg:sticky lg:top-6 lg:row-span-2 lg:block">
+    <div className="hidden self-start lg:sticky lg:top-6 lg:row-span-2 lg:block">
       <SiteLogo />
-    </aside>
+
+      <div className="mt-28">
+        <Navigation />
+      </div>
+    </div>
   );
 }
