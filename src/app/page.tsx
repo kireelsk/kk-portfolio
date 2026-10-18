@@ -1,8 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getProjects } from "@/lib/projects";
 import { ProjectPreview } from "@/components/Project/Preview";
 
 export default function Home() {
+  const skills = [
+    {
+      title: "Graphic Design",
+      description: "Visual identities, editorial and print design.",
+      image: "/media/home/skills/graphic-design.webp",
+    },
+    {
+      title: "Motion & 3D",
+      description: "Animation, 3D graphics, visualization.",
+      image: "/media/home/skills/motion-3d.webp",
+    },
+    {
+      title: "Web Design",
+      description: "Websites, digital experiences and interfaces.",
+      image: "/media/home/skills/web-design.webp",
+    },
+  ];
+
   const projects = getProjects("featured");
 
   return (
@@ -11,7 +30,8 @@ export default function Home() {
         <h1 className="col-span-full mb-10">
           I make things
           <br />
-          better – by <i>design</i>
+          better – by{"\u00A0"}
+          <i>design</i>
         </h1>
 
         <p className="col-span-full lg:col-span-6">
@@ -22,9 +42,37 @@ export default function Home() {
       </section>
 
       <section className="content-grid mb-40">
-        <h2 className="col-span-full mb-5">Skills</h2>
+        <div className="col-span-full grid grid-cols-subgrid lg:col-span-6">
+          <h2 className="col-span-full mb-8 lg:col-start-3">Skills</h2>
 
-        <p className="col-span-full lg:col-span-6">Coming soon...</p>
+          <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
+            {skills.map((skill) => (
+              <li
+                key={skill.title}
+                className="col-span-full grid grid-cols-subgrid items-center"
+              >
+                <div className="relative col-span-1 aspect-square md:col-span-2 lg:col-span-2">
+                  <Image
+                    src={skill.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 16vw, (min-width: 768px) 36vw, 46vw"
+                    className="object-contain"
+                  />
+                </div>
+
+                <div className="col-span-3 md:col-span-5 lg:col-span-4">
+                  <h3>{skill.title}</h3>
+                  <p className="mt-1">{skill.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="col-span-full grid grid-cols-subgrid lg:col-span-6">
+          <h2 className="col-span-full mb-8 lg:col-start-2">Experience</h2>
+        </div>
       </section>
 
       <section id="best-works" className="content-grid mb-40">
