@@ -5,17 +5,12 @@ import { ProjectMeta } from "./Meta";
 
 type ProjectCardProps = {
   project: ReturnType<typeof getProjects>[number];
-  loading?: "eager" | "lazy";
-  className?: string;
+  loading: "eager" | "lazy";
 };
 
-export function ProjectCard({
-  project,
-  loading = "lazy",
-  className,
-}: ProjectCardProps) {
+export function ProjectCard({ project, loading }: ProjectCardProps) {
   return (
-    <Link href={`/projects/${project._meta.path}`} className={className}>
+    <Link href={`/projects/${project._meta.path}`} className="project-card">
       <ProjectCover
         slug={project._meta.path}
         variant="vertical"

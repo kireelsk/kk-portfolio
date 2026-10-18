@@ -32,12 +32,15 @@ export default function Home() {
 
         <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
           {projects.map((project, index) => (
-            <ProjectPreview
-              project={project}
+            <li
               key={project._meta.path}
-              loading={index === 0 ? "eager" : "lazy"}
-              className="project-preview col-span-full grid grid-cols-subgrid"
-            />
+              className="col-span-full grid grid-cols-subgrid"
+            >
+              <ProjectPreview
+                project={project}
+                loading={index === 0 ? "eager" : "lazy"}
+              />
+            </li>
           ))}
         </ul>
 
