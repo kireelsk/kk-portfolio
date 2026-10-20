@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
@@ -27,9 +26,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
-      <body className="site-layout">
+      <body>
         <Header />
-        <Sidebar />
         {children}
         <Footer />
       </body>
