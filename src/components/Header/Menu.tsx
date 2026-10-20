@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Burger } from "./Burger";
 import { Navbar } from "./Navbar";
 
 export function Menu() {
@@ -24,31 +25,7 @@ export function Menu() {
 
   return (
     <>
-      <Burger open={open} onClick={() => setOpen(!open)} />
-      <button
-        type="button"
-        aria-label={open ? "Close menu" : "Open menu"}
-        aria-controls="mobile-navigation"
-        aria-expanded={open}
-        onClick={() => setOpen((value) => !value)}
-        className="flex size-11 items-center justify-center"
-      >
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          className="size-6"
-        >
-          {open ? (
-            <path d="M5 5 19 19M19 5 5 19" />
-          ) : (
-            <path d="M4 8h16M4 16h16" />
-          )}
-        </svg>
-      </button>
+      <Burger open={open} onClick={() => setOpen((current) => !current)} />
 
       <div
         id="mobile-navigation"

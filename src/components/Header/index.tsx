@@ -4,8 +4,8 @@ import { Navbar } from "./Navbar";
 
 export default function Header() {
   return (
-    <header className="site-container sticky top-0 z-50 bg-background py-2">
-      <div className="content-grid items-center">
+    <header className="site-container sticky top-0 z-50 bg-background">
+      <div className="content-grid h-14 items-center lg:h-16">
         <div className="col-span-3 md:col-span-7">
           <Logo />
         </div>
