@@ -23,7 +23,7 @@ export default function Projects() {
 
   return (
     <main className="projects-page min-w-0">
-      <section className="content-grid">
+      <section className="site-container content-grid">
         <h1 className="col-span-full mb-5">All Projects</h1>
 
         <ProjectGallery items={items} tags={tags} />

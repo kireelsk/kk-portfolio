@@ -24,7 +24,7 @@ export default async function ProjectPage({
 
   return (
     <main className="project-page min-w-0">
-      <section className="content-grid">
+      <section className="site-container content-grid">
         <h1 className="col-span-full mb-2">{project.title}</h1>
 
         <p className="col-span-full mb-8">{project.description}</p>
@@ -32,26 +32,21 @@ export default async function ProjectPage({
         <div className="col-span-full">
           <ProjectMeta project={project} />
         </div>
+      </section>
 
+      <section className="content-grid">
         <div className="col-span-full mt-10 grid grid-cols-subgrid gap-y-8">
           <ProjectCover
             key={`${project._meta.path}-horizontal`}
             slug={project._meta.path}
             variant="horizontal"
-            className="col-span-full md:col-span-5 lg:col-span-8"
+            className="col-span-full"
             loading="eager"
-          />
-
-          <ProjectCover
-            key={`${project._meta.path}-vertical`}
-            slug={project._meta.path}
-            variant="vertical"
-            className="col-span-full md:col-span-3 lg:col-span-4"
-            loading="eager"
-            sizes="(min-width: 768px) 33vw, 100vw"
           />
         </div>
+      </section>
 
+      <section className="site-container content-grid">
         <div className="col-span-full">
           <MDXContent code={project.mdx} />
         </div>

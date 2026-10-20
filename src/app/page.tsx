@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <main className="home-page min-w-0">
-      <section id="about" className="content-grid mt-140 mb-40">
+      <section id="about" className="site-container content-grid mt-140 mb-40">
         <h1 className="col-span-full mb-10">
           I make things
           <br />
@@ -41,7 +41,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="content-grid mb-40">
+      <section className="site-container content-grid mb-40">
         <div className="col-span-full grid grid-cols-subgrid lg:col-span-6">
           <h2 className="col-span-full mb-8 lg:col-start-3">Skills</h2>
 
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="best-works" className="content-grid mb-40">
+      <section id="best-works" className="site-container content-grid mb-40">
         <h2 className="col-span-full mb-5">Best Works</h2>
 
         <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
@@ -100,7 +100,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section id="contact" className="content-grid mb-40">
+      <section id="contact" className="site-container content-grid mb-40">
         <h2 className="col-span-full mb-5">Contacts</h2>
 
         <p className="col-span-full lg:col-span-6">Coming soon...</p>

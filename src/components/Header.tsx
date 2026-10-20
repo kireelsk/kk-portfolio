@@ -3,7 +3,7 @@ import { Navigation } from "./Navigation";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between bg-background py-4">
+    <header className="site-container sticky top-0 z-50 flex items-center justify-between bg-background py-4">
       <SiteLogo />
 
       <details className="relative">

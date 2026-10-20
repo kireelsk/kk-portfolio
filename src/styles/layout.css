@@ -1,9 +1,17 @@
 @layer components {
-  .content-grid {
-    @apply grid grid-cols-4 gap-x-4;
+  .site-container {
+    @apply px-4;
 
     @variant md {
-      @apply grid-cols-8;
+      @apply px-6;
+    }
+  }
+
+  .content-grid {
+    @apply grid grid-cols-4 gap-x-2;
+
+    @variant md {
+      @apply grid-cols-8 gap-x-4;
     }
 
     @variant lg {
