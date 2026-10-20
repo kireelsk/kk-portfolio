@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function GridOverlay() {
+export function GridHelper() {
   const [visible, setVisible] = useState(false);
 
   return (
