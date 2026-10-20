@@ -5,9 +5,7 @@ import { withContentCollections } from "@content-collections/next";
 const mediaUrl = process.env.NEXT_PUBLIC_MEDIA_URL;
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: process.env.DEV_ALLOWED_ORIGIN
-    ? [process.env.DEV_ALLOWED_ORIGIN]
-    : [],
+  allowedDevOrigins: process.env.DEV_ALLOWED_ORIGIN?.split(",") ?? [],
 
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
 
