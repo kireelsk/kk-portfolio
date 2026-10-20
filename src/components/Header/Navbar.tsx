@@ -2,9 +2,9 @@ import Link from "next/link";
 
 const navigation = [
   { label: "About", href: "/#about" },
-  { label: "Best works", href: "/#best-works" },
-  { label: "All projects", href: "/projects" },
-  { label: "Contact me!", href: "/#contact" },
+  { label: "Best Works", href: "/#best-works" },
+  { label: "All Projects", href: "/projects" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 type NavigationProps = {

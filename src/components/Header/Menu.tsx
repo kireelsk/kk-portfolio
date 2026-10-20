@@ -31,17 +31,19 @@ export function Menu() {
         id="mobile-navigation"
         aria-hidden={!open}
         inert={!open}
-        className="pointer-events-none absolute inset-x-0 top-full overflow-hidden lg:hidden"
+        className="pointer-events-none fixed inset-x-0 top-14 bottom-0 overflow-hidden lg:hidden"
       >
         <div
-          className={`site-container pointer-events-auto border-b border-foreground/10 bg-background py-8 transition-transform duration-300 ease-out motion-reduce:transition-none ${
-            open ? "translate-x-0" : "-translate-x-full"
+          className={`site-container content-grid pointer-events-auto h-full overflow-y-auto bg-background py-20 transition-transform duration-400 ease-out motion-reduce:transition-none ${
+            open ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <Navbar
-            className="flex flex-col items-start gap-6"
-            onNavigate={() => setOpen(false)}
-          />
+          <div className="col-span-2 col-start-2 md:col-start-4">
+            <Navbar
+              className="flex flex-col items-center gap-10"
+              onNavigate={() => setOpen(false)}
+            />
+          </div>
         </div>
       </div>
     </>
