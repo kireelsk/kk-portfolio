@@ -25,7 +25,7 @@ export default async function ProjectPage({
   return (
     <main className="project-page min-w-0">
       <section className="site-container content-grid">
-        <h1 className="col-span-full mb-2">{project.title}</h1>
+        <h2 className="col-span-full mb-2">{project.title}</h2>
 
         <p className="col-span-full mb-8">{project.description}</p>
 
@@ -53,7 +53,7 @@ export default async function ProjectPage({
 
         <Link
           href="/projects"
-          className="col-span-full inline-block text-xl text-neutral-500 hover:underline my-10"
+          className="col-span-full inline-block hover:underline my-10"
         >
           All Projects
         </Link>

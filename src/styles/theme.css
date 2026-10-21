@@ -5,7 +5,5 @@
   --font-sans: var(--font-inter), Helvetica, Arial, sans-serif;
   --font-heading: var(--font-inter-tight), Helvetica, Arial, sans-serif;
 
-  --tracking-h1: -0.03em;
-  --tracking-h2: -0.02em;
-  --tracking-h3: -0.01em;
+  --tracking-title: -0.03em;
 }

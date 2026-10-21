@@ -1,6 +1,157 @@
 @layer base {
   h1,
   h2,
+  h3 {
+    @apply font-heading font-semibold;
+    translate: -0.04em 0;
+  }
+
+  p {
+    @apply text-base leading-5 tracking-tight;
+
+    @variant sm {
+      @apply text-lg leading-6;
+    }
+
+    @variant lg {
+      @apply text-xl leading-7;
+    }
+  }
+}
+
+@layer components {
+  .home-page h1 {
+    @apply text-5xl tracking-title;
+
+    @variant sm {
+      @apply text-6xl;
+    }
+
+    @variant md {
+      @apply text-7xl;
+    }
+
+    @variant lg {
+      @apply text-8xl;
+    }
+  }
+
+  .home-page h2 {
+    @apply text-4xl tracking-tight;
+
+    @variant sm {
+      @apply text-5xl;
+    }
+
+    @variant md {
+      @apply text-6xl;
+    }
+
+    @variant lg {
+      @apply text-7xl;
+    }
+  }
+
+  .home-page h3 {
+    @apply text-2xl tracking-tight;
+
+    @variant sm {
+      @apply text-3xl;
+    }
+
+    @variant md {
+      @apply text-4xl;
+    }
+
+    @variant lg {
+      @apply text-5xl;
+    }
+  }
+
+  .project-preview h3 {
+    @apply text-4xl tracking-tight;
+
+    @variant sm {
+      @apply text-5xl;
+    }
+
+    @variant md {
+      @apply text-6xl;
+    }
+
+    @variant lg {
+      @apply text-7xl;
+    }
+  }
+
+  .projects-page h1 {
+    @apply text-2xl tracking-tight;
+
+    @variant sm {
+      @apply text-3xl;
+    }
+
+    @variant md {
+      @apply text-4xl;
+    }
+
+    @variant lg {
+      @apply text-5xl;
+    }
+  }
+
+  .projects-page h2 {
+    @apply text-4xl tracking-tight;
+
+    @variant sm {
+      @apply text-5xl;
+    }
+
+    @variant md {
+      @apply text-6xl;
+    }
+
+    @variant lg {
+      @apply text-7xl;
+    }
+  }
+
+  .project-page h1 {
+    @apply text-4xl tracking-tight;
+
+    @variant sm {
+      @apply text-5xl;
+    }
+
+    @variant md {
+      @apply text-6xl;
+    }
+
+    @variant lg {
+      @apply text-7xl;
+    }
+  }
+
+  .project-page h2 {
+    @apply text-2xl tracking-tight;
+
+    @variant sm {
+      @apply text-3xl;
+    }
+
+    @variant md {
+      @apply text-4xl;
+    }
+
+    @variant lg {
+      @apply text-5xl;
+    }
+  }
+}
+
+/*@layer base {
+  h1,
+  h2,
   h3,
   h4,
   h5,
@@ -89,4 +240,4 @@
       @apply text-4xl;
     }
   }
-}
+}*/
