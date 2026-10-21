@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="site-container sticky top-0 z-50 bg-background">
       <div className="content-grid h-14 items-center lg:h-16">
-        <div className="col-span-2 md:col-span-2 lg:col-span-1">
+        <div className="col-span-2">
           <Logo />
         </div>
 
