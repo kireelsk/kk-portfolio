@@ -27,14 +27,14 @@ export default function Home() {
   return (
     <main className="home-page min-w-0">
       <section id="about" className="site-container content-grid mt-140 mb-40">
-        <h1 className="col-span-full mb-10">
+        <h1 className="col-span-full md:col-start-2 lg:col-start-3 mb-9">
           I make things
           <br />
           better – by{"\u00A0"}
           <i>design</i>
         </h1>
 
-        <p className="col-span-full lg:col-span-6">
+        <p className="col-span-full md:col-start-2 lg:col-start-3 sm:col-span-3 md:col-span-5 lg:col-span-6">
           I work across disciplines because each brings a different way to
           approach an idea. I learn by making, exploring new possibilities and
           using what I discover to make things better.
@@ -94,7 +94,7 @@ export default function Home() {
 
         <Link
           href="/projects"
-          className="col-span-full mt-20 inline-block text-xl text-neutral-500 hover:underline"
+          className="col-span-full mt-20 inline-block hover:underline"
         >
           All Projects
         </Link>
