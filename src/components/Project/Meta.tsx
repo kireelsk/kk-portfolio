@@ -8,7 +8,7 @@ type ProjectMetaProps = {
 
 export function ProjectMeta({ project }: ProjectMetaProps) {
   return (
-    <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2 text-base">
+    <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
       <ProjectTags tags={project.tags} />
       <ProjectDate startDate={project.startDate} endDate={project.endDate} />
     </div>
