@@ -28,7 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-scroll-behavior="smooth"
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
-      <body className="relative min-h-screen">
+      <body className="relative flex min-h-dvh flex-col">
         <Header />
         {children}
         <Footer />
