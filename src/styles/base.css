@@ -4,7 +4,16 @@
   }
 
   body {
-    @apply font-sans font-normal;
+    @apply font-sans font-410;
     @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-580 translate-x-[-0.04em];
   }
 }
