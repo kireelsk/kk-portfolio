@@ -1,9 +1,24 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getProject, getProjects } from "@/lib/projects";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { ProjectCover } from "@/components/Project/Cover";
 import { ProjectMeta } from "@/components/Project/Meta";
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/projects/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProject(slug);
+
+  if (!project) notFound();
+
+  return {
+    title: project.title,
+    description: project.description,
+  };
+}
 
 export function generateStaticParams() {
   return getProjects("published").map((project) => ({

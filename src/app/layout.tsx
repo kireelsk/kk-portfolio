@@ -20,7 +20,10 @@ const interTight = Inter_Tight({
 const website = getWebsiteConfig();
 
 export const metadata: Metadata = {
-  title: website.metadata.title,
+  title: {
+    default: `${website.name} – ${website.metadata.title}`,
+    template: `${website.name} – %s`,
+  },
   description: website.metadata.description,
   applicationName: website.name,
 };
@@ -33,9 +36,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-dvh flex-col">
-        <Header />
+        <Header name={website.name} />
         {children}
-        <Footer />
+        <Footer name={website.name} />
         {process.env.NODE_ENV === "development" && (
           <>
             <GridHelper />

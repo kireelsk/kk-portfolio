@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-export function Logo() {
+export function Logo({ name }: { name: string }) {
   return (
     <Link href="/" className="font-semibold font-heading">
-      kk-portfolio
+      {name}
     </Link>
   );
 }

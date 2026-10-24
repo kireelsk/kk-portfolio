@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import { ProjectGallery } from "@/components/Project/Gallery";
 import { ProjectCard } from "@/components/Project/Card";
 import { getProjects } from "@/lib/projects";
 import { projectTags } from "@/lib/project-tags";
+
+export const metadata: Metadata = {
+  title: "All Projects",
+};
 
 export default function Projects() {
   const projects = getProjects("published");
