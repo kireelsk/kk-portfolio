@@ -1,11 +1,4 @@
 @layer base {
-  h1,
-  h2,
-  h3 {
-    @apply font-heading font-semibold;
-    translate: -0.04em 0;
-  }
-
   p {
     @apply text-base leading-5 tracking-tight;
 
@@ -16,6 +9,15 @@
     @variant lg {
       @apply text-xl leading-7;
     }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-580 translate-x-[-0.04em];
   }
 }
 
@@ -147,97 +149,20 @@
       @apply text-5xl;
     }
   }
-}
 
-/*@layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading tracking-tight;
-  }
+  .not-found-page h1 {
+    @apply text-5xl tracking-title;
 
-  a {
-    @apply text-lg tracking-tight;
-
-    @variant lg {
-      @apply text-lg;
+    @variant sm {
+      @apply text-6xl;
     }
-  }
 
-  p {
-    @apply text-lg tracking-tight;
-
-    @variant lg {
-      @apply text-xl;
+    @variant md {
+      @apply text-7xl;
     }
-  }
-}
-
-@layer components {
-  .home-page h1 {
-    @apply text-5xl;
 
     @variant lg {
       @apply text-8xl;
     }
   }
-
-  .home-page h2 {
-    @apply text-4xl;
-
-    @variant lg {
-      @apply text-6xl;
-    }
-  }
-
-  .home-page h3 {
-    @apply text-3xl;
-
-    @variant lg {
-      @apply text-4xl;
-    }
-  }
-
-  .project-preview h3 {
-    @apply text-4xl;
-
-    @variant lg {
-      @apply text-6xl;
-    }
-  }
-
-  .projects-page h1 {
-    @apply text-4xl;
-
-    @variant lg {
-      @apply text-6xl;
-    }
-  }
-
-  .project-card h2 {
-    @apply text-3xl;
-
-    @variant lg {
-      @apply text-4xl;
-    }
-  }
-
-  .project-page h1 {
-    @apply text-4xl;
-
-    @variant lg {
-      @apply text-6xl;
-    }
-  }
-
-  .project-page h2 {
-    @apply text-3xl;
-
-    @variant lg {
-      @apply text-4xl;
-    }
-  }
-}*/
+}
