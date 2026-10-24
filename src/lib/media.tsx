@@ -9,3 +9,11 @@ export function getMediaUrl(path: string) {
 
   return `/media/${path}`;
 }
+
+export function resolveMediaUrl(path: string): string {
+  if (path.startsWith("/") || /^https?:\/\//.test(path)) {
+    return path;
+  }
+
+  return getMediaUrl(path);
+}

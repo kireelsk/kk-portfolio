@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
+import { getWebsiteConfig } from "@/lib/website";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { GridHelper } from "@/components/GridHelper";
@@ -16,9 +17,12 @@ const interTight = Inter_Tight({
   subsets: ["latin", "cyrillic"],
 });
 
+const website = getWebsiteConfig();
+
 export const metadata: Metadata = {
-  title: "Designer portfolio",
-  description: "Visual identities, motion and digital experiences",
+  title: website.metadata.title,
+  description: website.metadata.description,
+  applicationName: website.name,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
