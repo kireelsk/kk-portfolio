@@ -4,8 +4,7 @@ import "./globals.css";
 import { getWebsiteConfig } from "@/lib/website";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { GridHelper } from "@/components/GridHelper";
-import { RowsHelper } from "@/components/RowsHelper";
+import { Devtool } from "@/components/Devtool";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,14 +36,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="relative flex min-h-dvh flex-col">
         <Header name={website.name} />
-        {children}
-        <Footer name={website.name} />
-        {process.env.NODE_ENV === "development" && (
-          <>
-            <GridHelper />
-            <RowsHelper />
-          </>
+        {process.env.NODE_ENV === "development" ? (
+          <Devtool>{children}</Devtool>
+        ) : (
+          children
         )}
+        <Footer name={website.name} />
       </body>
     </html>
   );
