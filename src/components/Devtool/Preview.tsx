@@ -118,7 +118,7 @@ export function Preview({
         </div>
       </div>
 
-      <div className="flex h-20 shrink-0 items-center gap-5 px-5">
+      <div className="flex h-19 shrink-0 items-center gap-6 pr-5 pl-20">
         <div className="flex min-w-0 flex-1 items-center gap-2 overflow-x-auto scrollbar-width:none &::-webkit-scrollbar:hidden">
           {presets.map((item, index) => {
             const breakpoint = breakpoints.find(

@@ -4,7 +4,6 @@ import "./globals.css";
 import { getWebsiteConfig } from "@/lib/website";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { Devtool } from "@/components/Devtool";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,7 +26,12 @@ export const metadata: Metadata = {
   applicationName: website.name,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const Devtool =
+    process.env.NODE_ENV === "development"
+      ? (await import("@/components/Devtool")).Devtool
+      : null;
+
   return (
     <html
       lang="en"
@@ -36,11 +40,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="relative flex min-h-dvh flex-col">
         <Header name={website.name} />
-        {process.env.NODE_ENV === "development" ? (
-          <Devtool>{children}</Devtool>
-        ) : (
-          children
-        )}
+
+        {Devtool ? <Devtool>{children}</Devtool> : children}
+
         <Footer name={website.name} />
       </body>
     </html>
