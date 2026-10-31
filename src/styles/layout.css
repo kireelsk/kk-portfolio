@@ -1,20 +1,20 @@
 @layer components {
   .site-container {
-    @apply px-4;
-
-    @variant md {
-      @apply px-6;
-    }
+    @apply px-(--layout-space);
   }
 
   .content-grid {
-    @apply grid grid-cols-4 gap-x-2;
+    @apply grid grid-cols-4 gap-x-(--layout-space);
 
     @variant md {
-      @apply grid-cols-8 gap-x-4;
+      @apply grid-cols-8;
     }
 
     @variant lg {
+      @apply grid-cols-10;
+    }
+
+    @variant xl {
       @apply grid-cols-12;
     }
   }
