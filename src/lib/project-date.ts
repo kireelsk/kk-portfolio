@@ -1,20 +1,11 @@
-// Converts a YYYY-MM date into an abbreviated English month name.
 function formatMonth(date: string): string {
   const month = Number(date.slice(5, 7)) - 1;
 
   return new Intl.DateTimeFormat("en-US", {
-    month: "short",
+    month: "long",
     timeZone: "UTC",
   }).format(new Date(Date.UTC(2000, month, 1)));
 }
-
-/*
- * Formats a project's date range for display.
- *
- * @param startDate - Optional start date in YYYY-MM format.
- * @param endDate - Optional end date in YYYY-MM format.
- * @returns A formatted date string or "WIP" if no end date is provided.
- */
 
 export function formatProjectDate(
   startDate?: string,
@@ -23,7 +14,7 @@ export function formatProjectDate(
   if (!endDate) return "WIP";
 
   if (!startDate || startDate === endDate) {
-    return `${formatMonth(endDate)} ${endDate.slice(0, 4)}`;
+    return `${formatMonth(endDate)}, ${endDate.slice(0, 4)}`;
   }
 
   const startYear = startDate.slice(0, 4);
@@ -33,5 +24,5 @@ export function formatProjectDate(
     return `${startYear}–${endYear}`;
   }
 
-  return `${formatMonth(startDate)}–${formatMonth(endDate)} ${endYear}`;
+  return `${formatMonth(startDate)}–${formatMonth(endDate)}, ${endYear}`;
 }
