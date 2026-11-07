@@ -34,7 +34,7 @@ export function Grid() {
           {Array.from({ length: columns }, (_, index) => (
             <div
               key={index}
-              className="border-x border-fuchsia-500/40 bg-fuchsia-500/10"
+              className="col-span-1 border-x border-fuchsia-500/40 bg-fuchsia-500/10"
             />
           ))}
         </div>
