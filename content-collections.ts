@@ -3,6 +3,8 @@ import { compileMDX } from "@content-collections/mdx";
 import { z } from "zod";
 import { projectTagsSchema } from "./src/lib/project-tags";
 
+const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
+
 const projects = defineCollection({
   name: "projects",
   directory: "content/projects",
@@ -31,6 +33,14 @@ const projects = defineCollection({
       links: z.array(z.url()).default([]),
 
       location: z.string().trim().min(1).optional(),
+
+      theme: z
+        .object({
+          background: color,
+          foreground: color,
+          accent: color,
+        })
+        .optional(),
 
       content: z.string(),
     })
