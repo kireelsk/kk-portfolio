@@ -4,7 +4,7 @@ import { Navbar } from "./Navbar";
 
 export default function Header({ name }: { name: string }) {
   return (
-    <header className="site-container sticky top-0 z-50 bg-background">
+    <header className="site-container fixed inset-x-0 top-0 z-50 bg-background">
       <div className="content-grid h-14 items-center lg:h-16">
         <div className="col-span-2">
           <Logo name={name} />
