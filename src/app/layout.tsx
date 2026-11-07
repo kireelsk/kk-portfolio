@@ -19,8 +19,8 @@ const website = getWebsiteConfig();
 
 export const metadata: Metadata = {
   title: {
-    default: `${website.name} – ${website.metadata.title}`,
-    template: `${website.name} – %s`,
+    default: `${website.name} | ${website.metadata.title}`,
+    template: `${website.name} | %s`,
   },
   description: website.metadata.description,
   applicationName: website.name,

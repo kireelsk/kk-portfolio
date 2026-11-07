@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { Section } from "@/components/Section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page not found",
+};
 
 const fourPath =
   "M380.018 7v390.143H455v87.309h-74.982V593H278.731V484.452H0v-84.556L248.503 7zM275.591 127.347 108.352 392.423v4.72h171.95V127.347z";
@@ -27,8 +32,8 @@ export default function NotFound() {
           ))}
         </div>
 
-        <h1>Page not found.</h1>
-        <p>Sorry:( This page doesn&apos;t exist.</p>
+        <h1>Page not found:(</h1>
+        <p>Sorry, this page doesn&apos;t exist.</p>
 
         <Link href="/">Back to home</Link>
       </Section>
