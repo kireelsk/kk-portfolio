@@ -28,22 +28,24 @@ export default function Home() {
   return (
     <main className="home-page">
       <Section grid12 full id="about">
-        <h1 className="md:col-start-2 lg:col-start-3 mb-9">
-          I make things
-          <br />
-          better – by{"\u00A0"}
-          <i>design</i>
-        </h1>
+        <div className="subgrid col-start-1 md:col-start-2 lg:col-start-2 xl:col-start-3">
+          <h1 className="title-hero">
+            I make things
+            <br />
+            better – by{"\u00A0"}
+            <i>design</i>
+          </h1>
 
-        <p className="md:col-start-2 lg:col-start-3 sm:col-span-3 md:col-span-5 lg:col-span-6">
-          I work across disciplines because each brings a different way to
-          approach an idea. I learn by making, exploring new possibilities and
-          using what I discover to make things better.
-        </p>
+          <p className="md:col-span-6 lg:col-span-8 xl:col-span-7 text-lead">
+            I work across disciplines because each brings a different way to
+            approach an idea. I learn by making, exploring new possibilities and
+            using what I discover to make things better.
+          </p>
+        </div>
       </Section>
 
       <Section grid12 full>
-        <div className="subgrid lg:col-span-6">
+        <div className="subgrid md:col-start-2 lg:col-span-6">
           <h2 className="mb-8 lg:col-start-3">Skills</h2>
 
           <ul className="subgrid gap-y-10">
@@ -68,13 +70,13 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="subgrid lg:col-span-6">
+        <div className="subgrid md:col-start-2 lg:col-span-6">
           <h2 className="mb-8 lg:col-start-2">Experience</h2>
         </div>
       </Section>
 
       <Section grid12 full id="best-works">
-        <h2 className="mb-5">Best Works</h2>
+        <h2 className="mb-5 md:col-start-2">Best Works</h2>
 
         <ul className="subgrid gap-y-10">
           {projects.map((project, index) => (
@@ -87,15 +89,18 @@ export default function Home() {
           ))}
         </ul>
 
-        <Link href="/projects" className="mt-20 inline-block hover:underline">
+        <Link
+          href="/projects"
+          className="md:col-start-2 mt-20 inline-block hover:underline"
+        >
           All Projects
         </Link>
       </Section>
 
       <Section grid12 full id="contact">
-        <h2 className="mb-5">Contacts</h2>
+        <h2 className="mb-5 md:col-start-2">Contacts</h2>
 
-        <p className="lg:col-span-6">Coming soon...</p>
+        <p className="md:col-start-2">Coming soon...</p>
       </Section>
     </main>
   );

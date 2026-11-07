@@ -42,18 +42,21 @@ export default async function ProjectPage({
     <main className="project-page">
       <article>
         <header className="site-container content-grid min-h-svh content-center gap-y-12">
-          <p className="md:col-span-3 lg:col-start-1 xl:col-start-2 bg-zinc-200">
+          <p className="sm:col-span-2 sm:col-start-2 md:col-span-4 md:col-start-3 lg:col-start-1 xl:col-start-2 bg-zinc-200 aspect-4/3">
             {project.name}
           </p>
 
-          <dl className="subgrid md:col-span-4 md:col-start-5 lg:col-span-6 lg:col-start-5 xl:col-start-6 gap-y-12">
-            <div className="sm:col-span-2 md:col-span-3">
+          <dl className="subgrid md:col-span-6 md:col-start-2 lg:col-start-5 lg:col-span-8 xl:col-start-6 xl:col-span-6 gap-y-12">
+            {/*<dl className="subgrid md:col-span-4 md:col-start-5 lg:col-span-6 lg:col-start-6 gap-y-12">*/}
+            <div className="sm:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-3">
+              {/*<div className="sm:col-span-2 md:col-span-3">*/}
               <dt>What&apos;s this?</dt>
               <dd>{project.about}</dd>
               <dd>{project.display.date}</dd>
             </div>
 
-            <div className="sm:col-span-2 md:col-span-3">
+            <div className="sm:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-3">
+              {/*<div className="sm:col-span-2 md:col-span-3">*/}
               <dt>Services:</dt>
               {project.display.tags.map((tag) => (
                 <dd
@@ -65,7 +68,8 @@ export default async function ProjectPage({
               ))}
             </div>
 
-            <div className="sm:col-span-3 md:col-span-full">
+            <div className="md:col-span-5 lg:col-span-7 xl:col-span-5">
+              {/*<div className="sm:col-span-3 md:col-span-full">*/}
               <dt>Task</dt>
               <dd>{project.task}</dd>
             </div>

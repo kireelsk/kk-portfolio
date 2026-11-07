@@ -11,19 +11,17 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
   return (
     <Link
       href={`/projects/${project._meta.path}`}
-      className="project-preview subgrid"
+      className="project-preview subgrid md:col-start-2 md:col-span-6 lg:col-start-1 lg:col-span-12"
     >
-      <div className="subgrid lg:col-span-4">
+      <div className="subgrid lg:col-span-6 xl:col-span-4">
         <div className="subgrid self-start items-baseline">
-          <span className="col-span-2 md:col-span-6 lg:col-span-2">
-            {project.name}
-          </span>
+          <span className="col-span-2 md:col-span-4">{project.name}</span>
           <span className="text-right col-span-2">{project.display.date}</span>
         </div>
 
         <div className="subgrid self-end">
           <h3>{project.title}</h3>
-          <p className="col-span-3">{project.description}</p>
+          <p className="">{project.description}</p>
         </div>
       </div>
 
@@ -31,7 +29,7 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
         slug={project._meta.path}
         loading={loading}
         variant="horizontal"
-        className="md:col-span-5 lg:col-span-8"
+        className="order-first lg:order-0 lg:col-span-6 xl:col-span-8"
       />
     </Link>
   );

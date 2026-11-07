@@ -30,7 +30,7 @@ export default function Projects() {
             <li
               key={project._meta.path}
               data-project-tags={project.tags.join(" ")}
-              className="md:col-span-2 lg:col-span-5 xl:col-span-4"
+              className="sm:col-span-2 md:col-span-4 lg:col-span-4"
             >
               <ProjectCard
                 project={project}

@@ -11,10 +11,6 @@
     }
 
     @variant lg {
-      @apply grid-cols-10;
-    }
-
-    @variant xl {
       @apply grid-cols-12;
     }
   }
