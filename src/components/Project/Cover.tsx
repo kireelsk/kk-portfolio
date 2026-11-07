@@ -12,11 +12,6 @@ type CoverProps = {
   className?: string;
 };
 
-const dimensions = {
-  horizontal: { width: 1600, height: 900 },
-  vertical: { width: 800, height: 1200 },
-};
-
 const defaultSizes = {
   horizontal: "(min-width: 768px) 67vw, 100vw",
   vertical: "(min-width: 768px) 25vw, 100vw",
@@ -27,13 +22,12 @@ const defaultSizes = {
  */
 export function ProjectCover({
   slug,
-  variant,
   loading = "lazy",
+  variant,
   sizes,
   className = "",
 }: CoverProps) {
   const [hasError, setHasError] = useState(false);
-  const { width, height } = dimensions[variant];
 
   const src = getMediaUrl(`projects/${slug}/cover-${variant}.webp`);
 
@@ -42,9 +36,8 @@ export function ProjectCover({
   return (
     <div
       className={`relative w-full overflow-hidden ${
-        hasError ? "bg-neutral-700" : ""
-      } ${className}`}
-      style={{ aspectRatio: `${width} / ${height}` }}
+        variant === "horizontal" ? "aspect-4/3" : "aspect-4/5"
+      } ${hasError ? "bg-neutral-700" : ""} ${className}`}
     >
       {!hasError && (
         <Image

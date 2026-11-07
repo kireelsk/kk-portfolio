@@ -13,29 +13,24 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
       href={`/projects/${project._meta.path}`}
       className="project-preview subgrid"
     >
-      <div className="self-end md:col-span-3 lg:col-span-4">
-        <h3 className="mb-2">{project.name}</h3>
+      <div className="subgrid lg:col-span-4">
+        <div className="subgrid self-start items-baseline">
+          <span className="col-span-2 md:col-span-6 lg:col-span-2">
+            {project.name}
+          </span>
+          <span className="text-right col-span-2">{project.display.date}</span>
+        </div>
 
-        <p className="mb-8">{project.description}</p>
-
-        <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
-          <ul className="flex flex-wrap gap-x-2">
-            {project.display.tags.map((tag, index) => (
-              <li key={index} className="inline-flex items-center gap-2">
-                {index > 0 && <span aria-hidden="true">/</span>}
-                <span>{tag}</span>
-              </li>
-            ))}
-          </ul>
-
-          <span>{project.display.date}</span>
+        <div className="subgrid self-end">
+          <h3>{project.title}</h3>
+          <p className="col-span-3">{project.description}</p>
         </div>
       </div>
 
       <ProjectCover
         slug={project._meta.path}
-        variant="horizontal"
         loading={loading}
+        variant="horizontal"
         className="md:col-span-5 lg:col-span-8"
       />
     </Link>

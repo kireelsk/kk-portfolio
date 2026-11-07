@@ -47,7 +47,10 @@ export function ProjectGallery({ items, tags }: GalleryProps) {
 
       <ul className="subgrid gap-y-8">
         {filterItems.map((item) => (
-          <li key={item.id} className="col-span-4 md:col-span-4 lg:col-span-4">
+          <li
+            key={item.id}
+            className="col-span-4 md:col-span-4 lg:col-span-5 xl:col-span-4"
+          >
             {item.content}
           </li>
         ))}

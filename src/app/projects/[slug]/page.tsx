@@ -79,6 +79,11 @@ export default async function ProjectPage({
           loading="eager"
         />
 
+        <Section grid12>
+          <h1>{project.title}</h1>
+          <p>{project.description}</p>
+        </Section>
+
         <MDXContent code={project.mdx} components={mdxComponents} />
 
         <Section grid12>
