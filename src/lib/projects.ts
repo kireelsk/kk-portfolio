@@ -1,5 +1,6 @@
 import { allProjects } from "content-collections";
 import { getProjectManifest } from "./project-manifest";
+import { getProjectMeta } from "./project-meta";
 
 // Ensures that YAML and MDX contain the same project IDs.
 function validateProjectIDs(manifestIDs: string[], mdxIDs: string[]): void {
@@ -47,7 +48,13 @@ function getProjectData() {
       );
     }
 
-    return { ...entry, project };
+    return {
+      ...entry,
+      project: {
+        ...project,
+        display: getProjectMeta(project),
+      },
+    };
   });
 }
 

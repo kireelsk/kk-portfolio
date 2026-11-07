@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ProjectCover } from "./Cover";
-import { ProjectMeta } from "./Meta";
 import type { getProjects } from "@/lib/projects";
 
 type ProjectPreviewProps = {
@@ -19,7 +18,18 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
 
         <p className="mb-8">{project.description}</p>
 
-        <ProjectMeta project={project} />
+        <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+          <ul className="flex flex-wrap gap-x-2">
+            {project.display.tags.map((tag, index) => (
+              <li key={index} className="inline-flex items-center gap-2">
+                {index > 0 && <span aria-hidden="true">/</span>}
+                <span>{tag}</span>
+              </li>
+            ))}
+          </ul>
+
+          <span>{project.display.date}</span>
+        </div>
       </div>
 
       <ProjectCover

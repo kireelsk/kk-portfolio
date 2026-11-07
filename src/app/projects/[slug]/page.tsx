@@ -4,7 +4,6 @@ import { getProject, getProjects } from "@/lib/projects";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { ProjectCover } from "@/components/Project/Cover";
-import { ProjectMeta } from "@/components/Project/Meta";
 
 export async function generateMetadata({
   params,
@@ -45,7 +44,18 @@ export default async function ProjectPage({
         <p className="col-span-full mb-8">{project.description}</p>
 
         <div className="col-span-full">
-          <ProjectMeta project={project} />
+          <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
+            <ul className="flex flex-wrap gap-x-2">
+              {project.display.tags.map((tag, index) => (
+                <li key={index} className="inline-flex items-center gap-2">
+                  {index > 0 && <span aria-hidden="true">/</span>}
+                  <span>{tag}</span>
+                </li>
+              ))}
+            </ul>
+
+            <span>{project.display.date}</span>
+          </div>
         </div>
       </section>
 
