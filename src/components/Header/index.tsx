@@ -14,8 +14,8 @@ export default function Header({ name }: { name: string }) {
           <Menu />
         </div>
 
-        <div className="col-span-5 col-start-5 hidden lg:block">
-          <Navbar className="flex items-center justify-between gap-3" />
+        <div className="hidden lg:block col-span-6 col-start-3 xl:col-span-6 xl:col-start-4">
+          <Navbar className="grid grid-flow-col justify-between" />
         </div>
       </div>
     </header>
