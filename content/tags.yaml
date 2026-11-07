@@ -5,14 +5,23 @@ tags:
   - id: 3d
     label: 3D
 
-  - id: ui-ux
-    label: UI/UX
+  - id: advertising
+    label: Advertising
 
-  - id: branding
-    label: Branding
+  - id: art-direction
+    label: Art Direction
+
+  - id: brand-identity
+    label: Brand Identity
+
+  - id: interior
+    label: Interior
 
   - id: motion
     label: Motion design
 
-  - id: interior
-    label: Interior
+  - id: naming
+    label: Naming
+
+  - id: ui-ux
+    label: UI/UX

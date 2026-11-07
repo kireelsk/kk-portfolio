@@ -14,7 +14,7 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
       className="project-preview col-span-full grid grid-cols-subgrid"
     >
       <div className="col-span-full self-end md:col-span-3 lg:col-span-4">
-        <h3 className="mb-2">{project.title}</h3>
+        <h3 className="mb-2">{project.name}</h3>
 
         <p className="mb-8">{project.description}</p>
 

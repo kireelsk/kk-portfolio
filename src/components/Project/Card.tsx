@@ -18,7 +18,7 @@ export function ProjectCard({ project, loading }: ProjectCardProps) {
 
       <div className="mt-4">
         <div className="grid grid-cols-[minmax(0,1fr)_90px] items-start gap-4">
-          <h2 className="mb-2">{project.title}</h2>
+          <h2 className="mb-2">{project.name}</h2>
           <span className="text-right whitespace-nowrap">
             {project.display.date}
           </span>

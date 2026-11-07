@@ -14,7 +14,7 @@ export async function generateMetadata({
   if (!project) notFound();
 
   return {
-    title: project.title,
+    title: project.name,
     description: project.description,
   };
 }
@@ -39,7 +39,7 @@ export default async function ProjectPage({
   return (
     <main className="project-page min-w-0">
       <section className="site-container content-grid">
-        <h2 className="col-span-full mb-2">{project.title}</h2>
+        <h2 className="col-span-full mb-2">{project.name}</h2>
 
         <p className="col-span-full mb-8">{project.description}</p>
 

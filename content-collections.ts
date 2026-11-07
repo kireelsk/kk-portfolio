@@ -10,13 +10,11 @@ const projects = defineCollection({
 
   schema: z
     .object({
+      name: z.string().trim().min(1),
       title: z.string().trim().min(1),
       description: z.string().trim().min(1),
-      client: z.string().trim().min(1).optional(),
 
-      type: z.enum(["commercial", "personal"]),
-      tags: projectTagsSchema,
-
+      about: z.string().trim().min(1),
       startDate: z
         .string()
         .regex(/^\d{4}-(0[1-9]|1[0-2])$/)
@@ -25,6 +23,10 @@ const projects = defineCollection({
         .string()
         .regex(/^\d{4}-(0[1-9]|1[0-2])$/)
         .optional(),
+
+      tags: projectTagsSchema,
+
+      task: z.string().trim().min(1),
 
       links: z.array(z.url()).default([]),
 
