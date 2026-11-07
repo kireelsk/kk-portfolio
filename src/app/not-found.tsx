@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Section } from "@/components/Section";
 
 const fourPath =
   "M380.018 7v390.143H455v87.309h-74.982V593H278.731V484.452H0v-84.556L248.503 7zM275.591 127.347 108.352 392.423v4.72h171.95V127.347z";
@@ -8,12 +9,9 @@ const zeroPath =
 
 export default function NotFound() {
   return (
-    <main className="not-found-page site-container flex-col">
-      <section className="content-grid flex-1">
-        <div
-          aria-hidden="true"
-          className="col-span-full grid grid-cols-3 gap-x-1 lg:gap-x-4"
-        >
+    <main className="not-found-page">
+      <Section grid12>
+        <div aria-hidden="true" className="grid grid-cols-3 gap-x-1 lg:gap-x-4">
           {["4", "0", "4"].map((digit, index) => (
             <svg
               key={index}
@@ -29,15 +27,11 @@ export default function NotFound() {
           ))}
         </div>
 
-        <div className="col-span-full">
-          <h1 className="col-span-full">Page not found.</h1>
-          <p>Sorry:( This page doesn&apos;t exist.</p>
+        <h1>Page not found.</h1>
+        <p>Sorry:( This page doesn&apos;t exist.</p>
 
-          <Link className="col-span-full" href="/">
-            Back to home
-          </Link>
-        </div>
-      </section>
+        <Link href="/">Back to home</Link>
+      </Section>
     </main>
   );
 }

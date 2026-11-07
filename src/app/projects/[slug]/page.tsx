@@ -4,6 +4,7 @@ import { getProject, getProjects } from "@/lib/projects";
 import { MDXContent } from "@content-collections/mdx/react";
 import { notFound } from "next/navigation";
 import { ProjectCover } from "@/components/Project/Cover";
+import { Section } from "@/components/Section";
 
 export async function generateMetadata({
   params,
@@ -37,13 +38,13 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   return (
-    <main className="project-page min-w-0">
-      <section className="site-container content-grid">
-        <h2 className="col-span-full mb-2">{project.name}</h2>
+    <main className="project-page">
+      <Section grid12>
+        <h2 className="mb-2">{project.name}</h2>
 
-        <p className="col-span-full mb-8">{project.description}</p>
+        <p className="mb-8">{project.description}</p>
 
-        <div className="col-span-full">
+        <div>
           <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
             <ul className="flex flex-wrap gap-x-2">
               {project.display.tags.map((tag, index) => (
@@ -57,32 +58,22 @@ export default async function ProjectPage({
             <span>{project.display.date}</span>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="content-grid">
-        <div className="col-span-full mt-10 grid grid-cols-subgrid gap-y-8">
-          <ProjectCover
-            key={`${project._meta.path}-horizontal`}
-            slug={project._meta.path}
-            variant="horizontal"
-            className="col-span-full"
-            loading="eager"
-          />
-        </div>
-      </section>
+      <ProjectCover
+        key={`${project._meta.path}-horizontal`}
+        slug={project._meta.path}
+        variant="horizontal"
+        loading="eager"
+      />
 
-      <section className="site-container content-grid">
-        <div className="col-span-full">
-          <MDXContent code={project.mdx} />
-        </div>
+      <Section grid12>
+        <MDXContent code={project.mdx} />
 
-        <Link
-          href="/projects"
-          className="col-span-full inline-block hover:underline my-10"
-        >
+        <Link href="/projects" className="inline-block hover:underline my-10">
           All Projects
         </Link>
-      </section>
+      </Section>
     </main>
   );
 }

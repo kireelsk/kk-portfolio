@@ -1,8 +1,10 @@
+import { Section } from "../Section";
+
 export function Playground() {
   return (
     <main className="devtool-playground site-container">
-      <div className="content-grid gap-y-12">
-        <div className="col-span-full space-y-3 lg:col-span-3 lg:col-start-6">
+      <Section grid12 full className="gap-y-12">
+        <div className="space-y-3 lg:col-span-3 lg:col-start-6">
           <p className="title-eyebrow">What is this?</p>
           <p className="text-body">
             Social and Communication, iOS app
@@ -11,14 +13,14 @@ export function Playground() {
           </p>
         </div>
 
-        <div className="col-span-full space-y-3 lg:col-span-3 lg:col-start-9">
+        <div className="space-y-3 lg:col-span-3 lg:col-start-9">
           <p className="title-eyebrow">Services:</p>
           <p className="text-body">
             Naming / Brand Identity / UI/UX / Advertising / Art Direction
           </p>
         </div>
 
-        <div className="col-span-full space-y-3 lg:col-span-6 lg:col-start-6">
+        <div className="space-y-3 lg:col-span-6 lg:col-start-6">
           <p className="title-eyebrow">Task</p>
           <p className="text-body">
             Develop a distinctive identity and mobile experience for a private
@@ -27,10 +29,10 @@ export function Playground() {
             use.
           </p>
         </div>
-      </div>
+      </Section>
 
-      <div className="content-grid">
-        <div className="col-span-full my-10 lg:col-span-6 lg:col-start-2">
+      <Section className="gap-y-12">
+        <div className="my-10 lg:col-span-6 lg:col-start-2">
           <h1 className="title-main">
             Objects made of light
             <br />
@@ -42,7 +44,7 @@ export function Playground() {
           </p>
         </div>
 
-        <div className="col-span-full my-10 lg:col-span-6 lg:col-start-2">
+        <div className="my-10 lg:col-span-6 lg:col-start-2">
           <h2 className="title-heading">A different perspective</h2>
           <p className="text-body">
             Every project begins with a question. Through research, exploration,
@@ -51,7 +53,7 @@ export function Playground() {
           </p>
         </div>
 
-        <div className="col-span-full my-10 lg:col-span-6 lg:col-start-2">
+        <div className="my-10 lg:col-span-6 lg:col-start-2">
           <h3 className="title-subhead">Attention to detail</h3>
           <p className="text-body">
             Typography, composition, rhythm, and proportion shape the way we
@@ -63,7 +65,7 @@ export function Playground() {
             experiences.
           </p>
         </div>
-      </div>
+      </Section>
     </main>
   );
 }

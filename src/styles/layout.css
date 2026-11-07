@@ -4,7 +4,7 @@
   }
 
   .content-grid {
-    @apply grid grid-cols-4 gap-x-(--layout-space);
+    @apply grid min-w-0 grid-cols-4 gap-x-(--layout-space);
 
     @variant md {
       @apply grid-cols-8;
@@ -17,5 +17,13 @@
     @variant xl {
       @apply grid-cols-12;
     }
+  }
+
+  .subgrid {
+    @apply grid min-w-0 grid-cols-subgrid;
+  }
+
+  :where(.content-grid > *, .subgrid > *) {
+    @apply col-span-full;
   }
 }

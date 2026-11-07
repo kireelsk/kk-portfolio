@@ -11,9 +11,9 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
   return (
     <Link
       href={`/projects/${project._meta.path}`}
-      className="project-preview col-span-full grid grid-cols-subgrid"
+      className="project-preview subgrid"
     >
-      <div className="col-span-full self-end md:col-span-3 lg:col-span-4">
+      <div className="self-end md:col-span-3 lg:col-span-4">
         <h3 className="mb-2">{project.name}</h3>
 
         <p className="mb-8">{project.description}</p>
@@ -36,7 +36,7 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
         slug={project._meta.path}
         variant="horizontal"
         loading={loading}
-        className="col-span-full md:col-span-5 lg:col-span-8"
+        className="md:col-span-5 lg:col-span-8"
       />
     </Link>
   );

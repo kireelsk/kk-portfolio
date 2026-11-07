@@ -3,6 +3,7 @@ import { ProjectGallery } from "@/components/Project/Gallery";
 import { ProjectCard } from "@/components/Project/Card";
 import { getProjects } from "@/lib/projects";
 import { projectTags } from "@/lib/project-tags";
+import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
   title: "All Projects",
@@ -27,12 +28,12 @@ export default function Projects() {
   }));
 
   return (
-    <main className="projects-page min-w-0">
-      <section className="site-container content-grid">
-        <h1 className="col-span-full mb-5">All Projects</h1>
+    <main className="projects-page">
+      <Section grid12 full>
+        <h1>All Projects</h1>
 
         <ProjectGallery items={items} tags={tags} />
-      </section>
+      </Section>
     </main>
   );
 }

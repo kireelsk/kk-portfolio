@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getProjects } from "@/lib/projects";
 import { ProjectPreview } from "@/components/Project/Preview";
+import { Section } from "@/components/Section";
 
 export default function Home() {
   const skills = [
@@ -25,32 +26,29 @@ export default function Home() {
   const projects = getProjects("featured");
 
   return (
-    <main className="home-page min-w-0">
-      <section id="about" className="site-container content-grid mt-140 mb-40">
-        <h1 className="col-span-full md:col-start-2 lg:col-start-3 mb-9">
+    <main className="home-page">
+      <Section grid12 full id="about">
+        <h1 className="md:col-start-2 lg:col-start-3 mb-9">
           I make things
           <br />
           better – by{"\u00A0"}
           <i>design</i>
         </h1>
 
-        <p className="col-span-full md:col-start-2 lg:col-start-3 sm:col-span-3 md:col-span-5 lg:col-span-6">
+        <p className="md:col-start-2 lg:col-start-3 sm:col-span-3 md:col-span-5 lg:col-span-6">
           I work across disciplines because each brings a different way to
           approach an idea. I learn by making, exploring new possibilities and
           using what I discover to make things better.
         </p>
-      </section>
+      </Section>
 
-      <section className="site-container content-grid mb-40">
-        <div className="col-span-full grid grid-cols-subgrid lg:col-span-6">
-          <h2 className="col-span-full mb-8 lg:col-start-3">Skills</h2>
+      <Section grid12 full>
+        <div className="subgrid lg:col-span-6">
+          <h2 className="mb-8 lg:col-start-3">Skills</h2>
 
-          <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
+          <ul className="subgrid gap-y-10">
             {skills.map((skill) => (
-              <li
-                key={skill.title}
-                className="col-span-full grid grid-cols-subgrid items-center"
-              >
+              <li key={skill.title} className="subgrid items-center">
                 <div className="relative col-span-1 aspect-square md:col-span-2 lg:col-span-2">
                   <Image
                     src={skill.image}
@@ -70,20 +68,17 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="col-span-full grid grid-cols-subgrid lg:col-span-6">
-          <h2 className="col-span-full mb-8 lg:col-start-2">Experience</h2>
+        <div className="subgrid lg:col-span-6">
+          <h2 className="mb-8 lg:col-start-2">Experience</h2>
         </div>
-      </section>
+      </Section>
 
-      <section id="best-works" className="site-container content-grid mb-40">
-        <h2 className="col-span-full mb-5">Best Works</h2>
+      <Section grid12 full id="best-works">
+        <h2 className="mb-5">Best Works</h2>
 
-        <ul className="col-span-full grid grid-cols-subgrid gap-y-10">
+        <ul className="subgrid gap-y-10">
           {projects.map((project, index) => (
-            <li
-              key={project._meta.path}
-              className="col-span-full grid grid-cols-subgrid"
-            >
+            <li key={project._meta.path} className="subgrid">
               <ProjectPreview
                 project={project}
                 loading={index === 0 ? "eager" : "lazy"}
@@ -92,19 +87,16 @@ export default function Home() {
           ))}
         </ul>
 
-        <Link
-          href="/projects"
-          className="col-span-full mt-20 inline-block hover:underline"
-        >
+        <Link href="/projects" className="mt-20 inline-block hover:underline">
           All Projects
         </Link>
-      </section>
+      </Section>
 
-      <section id="contact" className="site-container content-grid mb-40">
-        <h2 className="col-span-full mb-5">Contacts</h2>
+      <Section grid12 full id="contact">
+        <h2 className="mb-5">Contacts</h2>
 
-        <p className="col-span-full lg:col-span-6">Coming soon...</p>
-      </section>
+        <p className="lg:col-span-6">Coming soon...</p>
+      </Section>
     </main>
   );
 }
