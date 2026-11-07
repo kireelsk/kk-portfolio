@@ -10,7 +10,7 @@ const zeroPath =
 export default function NotFound() {
   return (
     <main className="not-found-page">
-      <Section grid12>
+      <Section>
         <div aria-hidden="true" className="grid grid-cols-3 gap-x-1 lg:gap-x-4">
           {["4", "0", "4"].map((digit, index) => (
             <svg

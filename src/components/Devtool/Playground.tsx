@@ -3,7 +3,7 @@ import { Section } from "../Section";
 export function Playground() {
   return (
     <main className="devtool-playground site-container">
-      <Section grid12 full className="gap-y-12">
+      <Section full className="gap-y-12">
         <div className="space-y-3 lg:col-span-3 lg:col-start-6">
           <p className="title-eyebrow">What is this?</p>
           <p className="text-body">

@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <main className="home-page">
-      <Section grid12 full id="about">
+      <Section full id="about">
         <div className="subgrid col-start-1 md:col-start-2 lg:col-start-2 xl:col-start-3">
           <h1 className="title-hero">
             I make things
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section grid12 full>
+      <Section full>
         <div className="subgrid md:col-start-2 lg:col-span-6">
           <h2 className="mb-8 lg:col-start-3">Skills</h2>
 
@@ -75,7 +75,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section grid12 full id="best-works">
+      <Section full id="best-works">
         <h2 className="mb-5 md:col-start-2">Best Works</h2>
 
         <ul className="subgrid gap-y-10">
@@ -97,7 +97,7 @@ export default function Home() {
         </Link>
       </Section>
 
-      <Section grid12 full id="contact">
+      <Section full id="contact">
         <h2 className="mb-5 md:col-start-2">Contacts</h2>
 
         <p className="md:col-start-2">Coming soon...</p>

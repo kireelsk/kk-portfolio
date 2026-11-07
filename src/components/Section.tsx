@@ -1,30 +1,30 @@
 import type { ComponentProps } from "react";
 
 type SectionProps = ComponentProps<"section"> & {
+  as?: "section" | "header" | "footer";
   full?: boolean;
-  grid12?: boolean;
 };
 
 export function Section({
+  as: Tag = "section",
   full = false,
-  grid12 = false,
   className,
   children,
   ...props
 }: SectionProps) {
   const classes = [
     "site-container",
+    "content-grid",
     "content-center",
     full && "min-h-svh",
-    grid12 && "content-grid",
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <section {...props} className={classes}>
+    <Tag {...props} className={classes}>
       {children}
-    </section>
+    </Tag>
   );
 }

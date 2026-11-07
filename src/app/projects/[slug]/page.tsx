@@ -41,7 +41,7 @@ export default async function ProjectPage({
   return (
     <main className="project-page">
       <article>
-        <header className="site-container content-grid min-h-svh content-center gap-y-12">
+        <Section full as="header" className="gap-y-12">
           <p className="sm:col-span-2 sm:col-start-2 md:col-span-4 md:col-start-3 lg:col-start-1 xl:col-start-2 bg-zinc-200 aspect-4/3">
             {project.name}
           </p>
@@ -74,7 +74,7 @@ export default async function ProjectPage({
               <dd>{project.task}</dd>
             </div>
           </dl>
-        </header>
+        </Section>
 
         <ProjectCover
           key={`${project._meta.path}-horizontal`}
@@ -83,14 +83,14 @@ export default async function ProjectPage({
           loading="eager"
         />
 
-        <Section grid12>
+        <Section>
           <h1>{project.title}</h1>
           <p>{project.description}</p>
         </Section>
 
         <MDXContent code={project.mdx} components={mdxComponents} />
 
-        <Section grid12>
+        <Section>
           <Link href="/projects" className="inline-block hover:underline my-10">
             All Projects
           </Link>

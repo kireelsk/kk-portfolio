@@ -19,12 +19,15 @@ export default function Projects() {
 
   return (
     <main className="projects-page">
-      <Section grid12 full className="gap-y-8">
-        <header className="sticky top-14 z-40 self-start bg-background lg:top-16">
-          <h1>All Projects</h1>
-          <ProjectsFilter tags={tags} />
-        </header>
+      <Section
+        as="header"
+        className="sticky top-14 z-40 bg-background py-4 lg:top-16"
+      >
+        <h1>All Projects</h1>
+        <ProjectsFilter tags={tags} />
+      </Section>
 
+      <Section full className="gap-y-8">
         <ul id="project-list" className="subgrid gap-y-8">
           {projects.map((project, index) => (
             <li
