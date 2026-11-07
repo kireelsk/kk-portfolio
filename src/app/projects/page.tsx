@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProjectGallery } from "@/components/Project/Gallery";
+import { ProjectsFilter } from "@/components/Project/Filter";
 import { ProjectCard } from "@/components/Project/Card";
 import { getProjects } from "@/lib/projects";
 import { projectTags } from "@/lib/project-tags";
@@ -12,27 +12,33 @@ export const metadata: Metadata = {
 export default function Projects() {
   const projects = getProjects("published");
 
-  // Excludes the draft filter from production.
   const tags =
     process.env.NODE_ENV === "development"
       ? projectTags
       : projectTags.filter((tag) => tag.id !== "draft");
 
-  // Prepares project cards on the server for client-side filtering.
-  const items = projects.map((project, index) => ({
-    id: project._meta.path,
-    tags: project.tags,
-    content: (
-      <ProjectCard project={project} loading={index < 4 ? "eager" : "lazy"} />
-    ),
-  }));
-
   return (
     <main className="projects-page">
-      <Section grid12 full>
-        <h1>All Projects</h1>
+      <Section grid12 full className="gap-y-8">
+        <header className="sticky top-14 z-40 self-start bg-background lg:top-16">
+          <h1>All Projects</h1>
+          <ProjectsFilter tags={tags} />
+        </header>
 
-        <ProjectGallery items={items} tags={tags} />
+        <ul id="project-list" className="subgrid gap-y-8">
+          {projects.map((project, index) => (
+            <li
+              key={project._meta.path}
+              data-project-tags={project.tags.join(" ")}
+              className="md:col-span-2 lg:col-span-5 xl:col-span-4"
+            >
+              <ProjectCard
+                project={project}
+                loading={index < 4 ? "eager" : "lazy"}
+              />
+            </li>
+          ))}
+        </ul>
       </Section>
     </main>
   );
