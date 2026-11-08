@@ -15,12 +15,16 @@ export function ProjectPreview({ project, loading }: ProjectPreviewProps) {
     >
       <div className="subgrid lg:col-span-6 xl:col-span-4">
         <div className="subgrid self-start items-baseline">
-          <span className="col-span-2 md:col-span-4">{project.name}</span>
-          <span className="text-right col-span-2">{project.display.date}</span>
+          <span className="text-lead col-span-2 md:col-span-4">
+            {project.name}
+          </span>
+          <span className="text-small text-right col-span-2">
+            {project.display.date}
+          </span>
         </div>
 
         <div className="subgrid self-end">
-          <h3>{project.title}</h3>
+          <h3 className="title-heading">{project.title}</h3>
           <p className="">{project.description}</p>
         </div>
       </div>

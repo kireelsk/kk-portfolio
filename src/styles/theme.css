@@ -5,13 +5,6 @@
 
   --font-sans: var(--font-inter), Helvetica, Arial, sans-serif;
   --font-heading: var(--font-inter-tight), Helvetica, Arial, sans-serif;
-
-  --tracking-title: -0.035em;
-  --font-weight-410: 410;
-  --font-weight-580: 580;
-
-  --text-3xl: 2rem; /* 32px */
-  --text-3xl--line-height: 2.25rem; /* 36px */
 }
 
 @layer base {

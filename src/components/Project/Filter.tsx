@@ -38,6 +38,7 @@ export function ProjectsFilter({ tags }: ProjectsFilterProps) {
         type="button"
         onClick={() => selectTag(null)}
         aria-pressed={activeTag === null}
+        className="link"
       >
         All
       </button>
@@ -48,6 +49,7 @@ export function ProjectsFilter({ tags }: ProjectsFilterProps) {
           type="button"
           onClick={() => selectTag(tag.id)}
           aria-pressed={activeTag === tag.id}
+          className="link"
         >
           {tag.label}
         </button>

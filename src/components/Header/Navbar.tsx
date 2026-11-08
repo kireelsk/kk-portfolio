@@ -18,7 +18,7 @@ export function Navbar({ className, onNavigate }: NavigationProps) {
       <ul className={className}>
         {navigation.map((item) => (
           <li key={item.href}>
-            <Link href={item.href} onClick={onNavigate}>
+            <Link href={item.href} onClick={onNavigate} className="link">
               {item.label}
             </Link>
           </li>

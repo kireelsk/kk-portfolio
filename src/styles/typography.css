@@ -1,168 +1,43 @@
 @layer base {
-  p {
-    @apply text-base leading-5 tracking-tight;
-
-    @variant sm {
-      @apply text-lg leading-6;
-    }
-
-    @variant lg {
-      @apply text-xl leading-7;
-    }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-580 translate-x-[-0.04em];
+  body {
+    @apply text-base sm:text-lg;
   }
 }
 
 @layer components {
-  .home-page h1 {
-    @apply text-5xl tracking-title;
-
-    @variant sm {
-      @apply text-6xl;
-    }
-
-    @variant md {
-      @apply text-7xl;
-    }
-
-    @variant lg {
-      @apply text-8xl;
-    }
+  :is(.title-hero, .title-main, .title-heading, .title-subhead, .title-eyebrow),
+  :where(.project-page h1, .project-page h2, .project-page h3) {
+    @apply font-heading font-medium translate-x-[-0.05em];
   }
 
-  .home-page h2 {
-    @apply text-4xl tracking-tight;
-
-    @variant sm {
-      @apply text-5xl;
-    }
-
-    @variant md {
-      @apply text-6xl;
-    }
-
-    @variant lg {
-      @apply text-7xl;
-    }
+  .title-hero {
+    @apply text-5xl sm:text-7xl md:text-7xl lg:text-8xl;
   }
 
-  .home-page h3 {
-    @apply text-2xl tracking-tight;
-
-    @variant sm {
-      @apply text-3xl;
-    }
-
-    @variant md {
-      @apply text-4xl;
-    }
-
-    @variant lg {
-      @apply text-5xl;
-    }
+  .title-main {
+    @apply text-5xl md:text-7xl;
   }
 
-  .project-preview h3 {
-    @apply text-4xl tracking-tight;
-
-    @variant sm {
-      @apply text-5xl;
-    }
-
-    @variant md {
-      @apply text-6xl;
-    }
-
-    @variant lg {
-      @apply text-7xl;
-    }
+  .title-heading,
+  :where(.project-page h2) {
+    @apply text-4xl md:text-5xl;
   }
 
-  .projects-page h1 {
-    @apply text-2xl tracking-tight;
-
-    @variant sm {
-      @apply text-3xl;
-    }
-
-    @variant md {
-      @apply text-4xl;
-    }
-
-    @variant lg {
-      @apply text-5xl;
-    }
+  .title-subhead,
+  :where(.project-page h3) {
+    @apply text-2xl md:text-3xl;
   }
 
-  .projects-page h2 {
-    @apply text-4xl tracking-tight;
-
-    @variant sm {
-      @apply text-5xl;
-    }
-
-    @variant md {
-      @apply text-6xl;
-    }
-
-    @variant lg {
-      @apply text-7xl;
-    }
+  .title-eyebrow,
+  .text-lead {
+    @apply text-xl sm:text-2xl;
   }
 
-  .project-page h1 {
-    @apply text-4xl tracking-tight;
-
-    @variant sm {
-      @apply text-5xl;
-    }
-
-    @variant md {
-      @apply text-6xl;
-    }
-
-    @variant lg {
-      @apply text-7xl;
-    }
+  .text-small {
+    @apply text-sm md:text-base;
   }
 
-  .project-page h2 {
-    @apply text-2xl tracking-tight;
-
-    @variant sm {
-      @apply text-3xl;
-    }
-
-    @variant md {
-      @apply text-4xl;
-    }
-
-    @variant lg {
-      @apply text-5xl;
-    }
-  }
-
-  .not-found-page h1 {
-    @apply text-5xl tracking-title;
-
-    @variant sm {
-      @apply text-6xl;
-    }
-
-    @variant md {
-      @apply text-7xl;
-    }
-
-    @variant lg {
-      @apply text-8xl;
-    }
+  .link {
+    @apply hover:text-accent;
   }
 }

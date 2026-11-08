@@ -9,20 +9,27 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, loading }: ProjectCardProps) {
   return (
-    <Link href={`/projects/${project._meta.path}`} className="project-card">
+    <Link
+      href={`/projects/${project._meta.path}`}
+      className="project-card subgrid"
+    >
       <ProjectCover
         slug={project._meta.path}
-        variant="vertical"
+        variant="horizontal"
         loading={loading}
       />
 
-      <div className="mt-4">
-        <h2 className="mb-2">{project.name}</h2>
-        <p className="mb-2">{project.description}</p>
-        <div className="flex justify-between">
-          <span className="whitespace-nowrap">{project.about}</span>
-          <span className="whitespace-nowrap">{project.display.date}</span>
+      <div className="subgrid">
+        <h2 className="title-heading col-span-2 sm:col-span-1 md:col-span-2 lg:col-span-3">
+          {project.name}
+        </h2>
+
+        <div className="col-span-2 sm:col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-2">
+          <p className="text-small text-right">{project.about}</p>
+          <p className="text-small text-right">{project.display.date}</p>
         </div>
+
+        <p className="text-small lg:col-span-4 mb-2">{project.description}</p>
       </div>
     </Link>
   );

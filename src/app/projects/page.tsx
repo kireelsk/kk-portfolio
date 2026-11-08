@@ -23,17 +23,17 @@ export default function Projects() {
         as="header"
         className="sticky top-14 z-40 bg-background py-4 lg:top-16"
       >
-        <h1>All Projects</h1>
+        <h1 className="title-subhead">All Projects</h1>
         <ProjectsFilter tags={tags} />
       </Section>
 
-      <Section full className="gap-y-8">
-        <ul id="project-list" className="subgrid gap-y-8">
+      <Section className="gap-y-8">
+        <ul id="project-list" className="subgrid xl:col-start-3 gap-y-8">
           {projects.map((project, index) => (
             <li
               key={project._meta.path}
               data-project-tags={project.tags.join(" ")}
-              className="sm:col-span-2 md:col-span-4 lg:col-span-4"
+              className="subgrid sm:col-span-2 md:col-span-4 lg:col-span-6 xl:col-span-5"
             >
               <ProjectCard
                 project={project}

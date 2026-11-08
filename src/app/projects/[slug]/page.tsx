@@ -65,14 +65,14 @@ export default async function ProjectPage({
               {/*<dl className="subgrid md:col-span-4 md:col-start-5 lg:col-span-6 lg:col-start-6 gap-y-12">*/}
               <div className="sm:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-2">
                 {/*<div className="sm:col-span-2 md:col-span-3">*/}
-                <dt className="text-accent">What&apos;s this?</dt>
+                <dt className="title-eyebrow text-accent">What&apos;s this?</dt>
                 <dd>{project.about}</dd>
                 <dd>{project.display.date}</dd>
               </div>
 
               <div className="sm:col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-3">
                 {/*<div className="sm:col-span-2 md:col-span-3">*/}
-                <dt className="text-accent">Services:</dt>
+                <dt className="title-eyebrow text-accent">Services:</dt>
                 {project.display.tags.map((tag) => (
                   <dd
                     key={tag}
@@ -85,7 +85,7 @@ export default async function ProjectPage({
 
               <div className="md:col-span-5 lg:col-span-7 xl:col-span-5">
                 {/*<div className="sm:col-span-3 md:col-span-full">*/}
-                <dt className="text-accent">Task</dt>
+                <dt className="title-eyebrow text-accent">Task</dt>
                 <dd>{project.task}</dd>
               </div>
             </dl>
@@ -99,8 +99,8 @@ export default async function ProjectPage({
           />
 
           <Section>
-            <h1>{project.title}</h1>
-            <p>{project.description}</p>
+            <h1 className="title-main">{project.title}</h1>
+            <p className="text-lead">{project.description}</p>
           </Section>
 
           <MDXContent code={project.mdx} components={mdxComponents} />
@@ -108,7 +108,7 @@ export default async function ProjectPage({
           <Section>
             <Link
               href="/projects"
-              className="inline-block hover:underline my-10"
+              className="text-lead link inline-block my-10 underline"
             >
               All Projects
             </Link>

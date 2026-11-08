@@ -36,7 +36,7 @@ export default function Home() {
             <i>design</i>
           </h1>
 
-          <p className="md:col-span-6 lg:col-span-8 xl:col-span-7 text-lead">
+          <p className="text-lead md:col-span-6 lg:col-span-8 xl:col-span-7">
             I work across disciplines because each brings a different way to
             approach an idea. I learn by making, exploring new possibilities and
             using what I discover to make things better.
@@ -46,7 +46,7 @@ export default function Home() {
 
       <Section full>
         <div className="subgrid md:col-start-2 lg:col-span-6">
-          <h2 className="mb-8 lg:col-start-3">Skills</h2>
+          <h2 className="title-subhead mb-8 lg:col-start-3">Skills</h2>
 
           <ul className="subgrid gap-y-10">
             {skills.map((skill) => (
@@ -62,7 +62,7 @@ export default function Home() {
                 </div>
 
                 <div className="col-span-3 md:col-span-5 lg:col-span-4">
-                  <h3>{skill.title}</h3>
+                  <h3 className="title-heading">{skill.title}</h3>
                   <p className="mt-1">{skill.description}</p>
                 </div>
               </li>
@@ -71,12 +71,12 @@ export default function Home() {
         </div>
 
         <div className="subgrid md:col-start-2 lg:col-span-6">
-          <h2 className="mb-8 lg:col-start-2">Experience</h2>
+          <h2 className="title-subhead mb-8 lg:col-start-2">Experience</h2>
         </div>
       </Section>
 
       <Section full id="best-works">
-        <h2 className="mb-5 md:col-start-2">Best Works</h2>
+        <h2 className="title-subhead mb-5 md:col-start-2">Best Works</h2>
 
         <ul className="subgrid gap-y-10">
           {projects.map((project, index) => (
@@ -91,16 +91,16 @@ export default function Home() {
 
         <Link
           href="/projects"
-          className="md:col-start-2 mt-20 inline-block hover:underline"
+          className="text-lead link md:col-start-2 mt-20 inline-block underline"
         >
           All Projects
         </Link>
       </Section>
 
       <Section full id="contact">
-        <h2 className="mb-5 md:col-start-2">Contacts</h2>
+        <h2 className="title-main mb-5 md:col-start-2">Contacts</h2>
 
-        <p className="md:col-start-2">Coming soon...</p>
+        <p className="text-lead md:col-start-2">Coming soon...</p>
       </Section>
     </main>
   );
