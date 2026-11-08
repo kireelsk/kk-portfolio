@@ -1,8 +1,17 @@
 import Link from "next/link";
 
-export function Logo({ name }: { name: string }) {
+export function Logo({
+  name,
+  className,
+}: {
+  name: string;
+  className?: string;
+}) {
   return (
-    <Link href="/" className="link font-semibold font-heading">
+    <Link
+      href="/"
+      className={`link font-semibold font-heading ${className ?? ""}`}
+    >
       {name}
     </Link>
   );

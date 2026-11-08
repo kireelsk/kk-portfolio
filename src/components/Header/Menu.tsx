@@ -8,8 +8,10 @@ import { Navbar } from "./Navbar";
 
 export function Menu({
   navigation,
+  className,
 }: {
   navigation: WebsiteConfig["navigation"];
+  className?: string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -31,7 +33,11 @@ export function Menu({
 
   return (
     <>
-      <Burger open={open} onClick={() => setOpen((current) => !current)} />
+      <Burger
+        open={open}
+        onClick={() => setOpen((current) => !current)}
+        className={className}
+      />
 
       <div
         id="mobile-navigation"
@@ -44,13 +50,11 @@ export function Menu({
             open ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          <div className="col-span-2 col-start-2 md:col-start-4">
-            <Navbar
-              navigation={navigation}
-              className="flex flex-col items-center gap-10"
-              onNavigate={() => setOpen(false)}
-            />
-          </div>
+          <Navbar
+            navigation={navigation}
+            className="col-span-2 col-start-2 md:col-start-4"
+            onNavigate={() => setOpen(false)}
+          />
         </div>
       </div>
     </>

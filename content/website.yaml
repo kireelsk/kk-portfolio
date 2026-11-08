@@ -17,6 +17,10 @@ navigation:
     label: All Projects
     href: "/projects"
 
+  - id: 404-page
+    label: 404 Page
+    href: "/404"
+
   - id: contact
     label: Contact
     href: "/#contact"

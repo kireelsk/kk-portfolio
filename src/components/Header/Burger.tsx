@@ -1,25 +1,14 @@
 type BurgerProps = {
   open: boolean;
   onClick: () => void;
+  className?: string;
 };
 
-export function Burger({ open, onClick }: BurgerProps) {
+export function Burger({ open, onClick, className }: BurgerProps) {
   const lineStyle = {
     transformBox: "fill-box" as const,
     transformOrigin: "center",
   };
-
-  // const outerLine = `transition-transform duration-160 ease-[cubic-bezier(0.42,0,0.58,1)] motion-reduce:transition-none ${
-  //   open ? "delay-0" : "delay-260"
-  // }`;
-
-  // const centerLine = `transition-transform duration-200 ease-[cubic-bezier(0.42,0,0.58,1.2)] motion-reduce:transition-none ${
-  //   open ? "delay-0" : "delay-220"
-  // }`;
-
-  // const allLines = `size-6.5 transition-transform duration-360 ease-[cubic-bezier(0.42,0,0.58,1.12)] motion-reduce:transition-none ${
-  //   open ? "rotate-135 delay-180" : "rotate-0 delay-0"
-  // }`;
 
   const outerLine = `transition-transform duration-180 ease-[cubic-bezier(0.42,0,0.58,1)] motion-reduce:transition-none ${
     open ? "delay-0" : "delay-300"
@@ -40,7 +29,7 @@ export function Burger({ open, onClick }: BurgerProps) {
       aria-controls="mobile-navigation"
       aria-expanded={open}
       onClick={onClick}
-      className="relative flex size-6.5 cursor-pointer items-center justify-center before:absolute before:-inset-4 before:content-['']"
+      className={`relative flex size-6.5 cursor-pointer items-center justify-center before:absolute before:-inset-4 before:content-[''] ${className ?? ""}`}
     >
       <svg
         aria-hidden="true"

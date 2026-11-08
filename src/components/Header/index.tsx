@@ -1,5 +1,6 @@
 import type { WebsiteConfig } from "@/lib/website";
 
+import { Section } from "../Section";
 import { Logo } from "./Logo";
 import { Menu } from "./Menu";
 import { Navbar } from "./Navbar";
@@ -9,23 +10,21 @@ export default function Header({
   navigation,
 }: Pick<WebsiteConfig, "name" | "navigation">) {
   return (
-    <header className="site-container fixed inset-x-0 top-0 z-50 bg-background">
-      <div className="content-grid h-14 items-center lg:h-16">
-        <div className="col-span-2">
-          <Logo name={name} />
-        </div>
+    <Section
+      as="header"
+      className="fixed inset-x-0 top-0 z-50 h-14 items-center bg-background lg:h-16"
+    >
+      <Logo name={name} className="col-span-2" />
 
-        <div className="col-span-1 col-start-4 md:col-start-8 flex justify-end lg:hidden">
-          <Menu navigation={navigation} />
-        </div>
+      <Menu
+        navigation={navigation}
+        className="col-span-1 col-start-4 justify-self-end md:col-start-8 lg:hidden"
+      />
 
-        <div className="hidden lg:block col-span-6 col-start-3 xl:col-span-6 xl:col-start-4">
-          <Navbar
-            navigation={navigation}
-            className="grid grid-flow-col justify-between"
-          />
-        </div>
-      </div>
-    </header>
+      <Navbar
+        navigation={navigation}
+        className="hidden lg:col-span-8 lg:col-start-4 lg:block xl:col-span-7 xl:col-start-5"
+      />
+    </Section>
   );
 }
