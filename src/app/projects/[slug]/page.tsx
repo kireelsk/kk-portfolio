@@ -49,6 +49,7 @@ export default async function ProjectPage({
               --page-background: ${theme.background};
               --page-foreground: ${theme.foreground};
               --page-accent: ${theme.accent};
+              --page-font-weight: ${theme.fontWeight ?? 400};
             }
           `}
         </style>

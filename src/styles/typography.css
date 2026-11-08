@@ -1,6 +1,7 @@
 @layer base {
   body {
-    @apply text-base sm:text-lg;
+    @apply font-sans text-base sm:text-lg;
+    font-weight: var(--page-font-weight);
   }
 }
 
@@ -11,7 +12,7 @@
   }
 
   .title-hero {
-    @apply text-5xl sm:text-7xl md:text-7xl lg:text-8xl;
+    @apply text-5xl sm:text-7xl md:text-7xl lg:text-8xl tracking-hard;
   }
 
   .title-main {
@@ -20,7 +21,7 @@
 
   .title-heading,
   :where(.project-page h2) {
-    @apply text-4xl md:text-5xl;
+    @apply text-4xl md:text-5xl tracking-light;
   }
 
   .title-subhead,
@@ -30,7 +31,7 @@
 
   .title-eyebrow,
   .text-lead {
-    @apply text-xl sm:text-2xl;
+    @apply text-xl sm:text-2xl tracking-light;
   }
 
   .text-small {

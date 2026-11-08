@@ -4,7 +4,6 @@
   }
 
   body {
-    @apply font-sans;
     @apply bg-background text-foreground;
   }
 }

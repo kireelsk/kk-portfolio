@@ -39,6 +39,7 @@ const projects = defineCollection({
           background: color,
           foreground: color,
           accent: color,
+          fontWeight: z.number().int().min(100).max(900).optional(),
         })
         .optional(),
 

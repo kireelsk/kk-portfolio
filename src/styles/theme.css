@@ -5,6 +5,9 @@
 
   --font-sans: var(--font-inter), Helvetica, Arial, sans-serif;
   --font-heading: var(--font-inter-tight), Helvetica, Arial, sans-serif;
+
+  --tracking-hard: -0.04em;
+  --tracking-light: -0.02em;
 }
 
 @layer base {
@@ -12,13 +15,12 @@
     --page-background: var(--color-white);
     --page-foreground: var(--color-black);
     --page-accent: var(--color-black);
+    --page-font-weight: 400;
 
     --layout-space: calc(var(--spacing) * 4);
-
     @variant md {
       --layout-space: calc(var(--spacing) * 5);
     }
-
     @variant lg {
       --layout-space: calc(var(--spacing) * 6);
     }
