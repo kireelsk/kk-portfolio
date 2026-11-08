@@ -1,10 +1,16 @@
 "use client";
 
+import type { WebsiteConfig } from "@/lib/website";
+
 import { useEffect, useState } from "react";
 import { Burger } from "./Burger";
 import { Navbar } from "./Navbar";
 
-export function Menu() {
+export function Menu({
+  navigation,
+}: {
+  navigation: WebsiteConfig["navigation"];
+}) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -40,6 +46,7 @@ export function Menu() {
         >
           <div className="col-span-2 col-start-2 md:col-start-4">
             <Navbar
+              navigation={navigation}
               className="flex flex-col items-center gap-10"
               onNavigate={() => setOpen(false)}
             />

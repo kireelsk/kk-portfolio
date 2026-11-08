@@ -75,8 +75,8 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section full id="best-works">
-        <h2 className="title-subhead mb-5 md:col-start-2">Best Works</h2>
+      <Section full id="selected-works">
+        <h2 className="title-subhead mb-5 md:col-start-2">Selected Works</h2>
 
         <ul className="subgrid gap-y-10">
           {projects.map((project, index) => (

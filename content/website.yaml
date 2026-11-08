@@ -3,3 +3,20 @@ name: "kk-portfolio"
 metadata:
   title: "Designer portfolio"
   description: "Visual identities, motion and digital experiences."
+
+navigation:
+  - id: about
+    label: About
+    href: "/#about"
+
+  - id: selected-works
+    label: Selected Works
+    href: "/#selected-works"
+
+  - id: projects
+    label: All Projects
+    href: "/projects"
+
+  - id: contact
+    label: Contact
+    href: "/#contact"

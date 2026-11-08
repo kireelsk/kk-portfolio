@@ -1,23 +1,19 @@
+import type { WebsiteConfig } from "@/lib/website";
+
 import Link from "next/link";
 
-const navigation = [
-  { label: "About", href: "/#about" },
-  { label: "Best Works", href: "/#best-works" },
-  { label: "All Projects", href: "/projects" },
-  { label: "Contact", href: "/#contact" },
-];
-
 type NavigationProps = {
+  navigation: WebsiteConfig["navigation"];
   className?: string;
   onNavigate?: () => void;
 };
 
-export function Navbar({ className, onNavigate }: NavigationProps) {
+export function Navbar({ navigation, className, onNavigate }: NavigationProps) {
   return (
     <nav aria-label="Main navigation">
       <ul className={className}>
         {navigation.map((item) => (
-          <li key={item.href}>
+          <li key={item.id}>
             <Link href={item.href} onClick={onNavigate} className="link">
               {item.label}
             </Link>

@@ -39,7 +39,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-dvh flex-col">
-        <Header name={website.name} />
+        <Header name={website.name} navigation={website.navigation} />
 
         {Devtool ? <Devtool>{children}</Devtool> : children}
 
