@@ -4,7 +4,7 @@ import "./globals.css";
 import { getWebsiteConfig } from "@/lib/website";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { Logo } from "@/custom/Logo";
+import { Logo } from "@/components/Logo";
 
 const inter = Inter({
   variable: "--font-inter",
