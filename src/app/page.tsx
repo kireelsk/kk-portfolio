@@ -1,25 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
+
 import { getProjects } from "@/lib/projects";
+
 import { ProjectPreview } from "@/components/Project/Preview";
 import { Section } from "@/components/Section";
 
 export default function Home() {
   const skills = [
     {
-      title: "Graphic Design",
-      description: "Visual identities, editorial and print design.",
-      image: "/media/home/skills/graphic-design.webp",
+      title: "First Skill",
+      description: "A brief explanation of the first area of expertise.",
+      image: "/media/home/skills/skill-image.webp",
     },
     {
-      title: "Motion & 3D",
-      description: "Animation, 3D graphics, visualization.",
-      image: "/media/home/skills/motion-3d.webp",
+      title: "Second Skill",
+      description: "A short overview of another creative discipline.",
+      image: "/media/home/skills/skill-image.webp",
     },
     {
-      title: "Web Design",
-      description: "Websites, digital experiences and interfaces.",
-      image: "/media/home/skills/web-design.webp",
+      title: "Third Skill",
+      description: "A few words describing an additional capability.",
+      image: "/media/home/skills/skill-image.webp",
     },
   ];
 
@@ -28,18 +30,16 @@ export default function Home() {
   return (
     <main className="home-page">
       <Section full id="about">
-        <div className="subgrid col-start-1 md:col-start-2 lg:col-start-2 xl:col-start-3">
+        <div className="subgrid col-start-1 md:col-start-2 lg:col-start-2">
+          {/* prettier-ignore */}
           <h1 className="title-hero">
-            I make things
-            <br />
-            better – by{"\u00A0"}
-            <i>design</i>
+            A <span className="title-accent">giant</span> <br className="sm:hidden" /> hero <br className="hidden md:block" /> title –<br className="sm:hidden" /> for <span className="title-accent">attention</span>
           </h1>
 
           <p className="text-lead md:col-span-6 lg:col-span-8 xl:col-span-7">
-            I work across disciplines because each brings a different way to
-            approach an idea. I learn by making, exploring new possibilities and
-            using what I discover to make things better.
+            This is an introductory paragraph. It provides a little more
+            context, supports the main headline, and gives visitors a clear idea
+            of what this website is about.
           </p>
         </div>
       </Section>
@@ -49,7 +49,7 @@ export default function Home() {
           <h2 className="title-subhead mb-8 lg:col-start-3">Skills</h2>
 
           <ul className="subgrid gap-y-10">
-            {skills.map((skill) => (
+            {skills.map((skill, index) => (
               <li key={skill.title} className="subgrid items-center">
                 <div className="relative col-span-1 aspect-square md:col-span-2 lg:col-span-2">
                   <Image
@@ -58,6 +58,7 @@ export default function Home() {
                     fill
                     sizes="(min-width: 1024px) 16vw, (min-width: 768px) 36vw, 46vw"
                     className="object-contain"
+                    loading={index === 0 ? "eager" : "lazy"}
                   />
                 </div>
 
@@ -93,7 +94,7 @@ export default function Home() {
           href="/projects"
           className="text-lead link md:col-start-2 mt-20 inline-block underline"
         >
-          All Projects
+          Explore all projects
         </Link>
       </Section>
 

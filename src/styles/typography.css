@@ -12,7 +12,19 @@
   }
 
   .title-hero {
-    @apply text-5xl sm:text-7xl md:text-7xl lg:text-8xl tracking-hard;
+    @apply text-6xl sm:text-7xl lg:text-8xl tracking-tighter;
+    line-height: 1.1;
+    font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+
+    @variant max-[375px] {
+      @apply text-5xl;
+    }
+  }
+
+  .title-accent {
+    @apply font-normal tracking-hard;
+    font-size: calc(4em / 3);
+    line-height: 0;
   }
 
   .title-main {
@@ -21,7 +33,7 @@
 
   .title-heading,
   :where(.project-page h2) {
-    @apply text-4xl md:text-5xl tracking-light;
+    @apply text-4xl md:text-5xl tracking-tight;
   }
 
   .title-subhead,
@@ -31,7 +43,7 @@
 
   .title-eyebrow,
   .text-lead {
-    @apply text-xl sm:text-2xl tracking-light;
+    @apply text-xl md:text-2xl;
   }
 
   .text-small {
