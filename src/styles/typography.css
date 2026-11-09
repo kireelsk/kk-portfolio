@@ -28,7 +28,7 @@
   }
 
   .title-main {
-    @apply text-5xl md:text-7xl;
+    @apply text-5xl md:text-7xl tracking-tight;
   }
 
   .title-heading,
