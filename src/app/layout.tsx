@@ -4,6 +4,7 @@ import "./globals.css";
 import { getWebsiteConfig } from "@/lib/website";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { Logo } from "@/custom/Logo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,7 +40,11 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${interTight.variable} h-full antialiased`}
     >
       <body className="relative flex min-h-dvh flex-col">
-        <Header name={website.name} navigation={website.navigation} />
+        <Header
+          name={website.name}
+          navigation={website.navigation}
+          logo={<Logo />}
+        />
 
         {Devtool ? <Devtool>{children}</Devtool> : children}
 

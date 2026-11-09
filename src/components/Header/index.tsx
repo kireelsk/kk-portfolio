@@ -1,20 +1,31 @@
+import type { ReactNode } from "react";
+import Link from "next/link";
+
 import type { WebsiteConfig } from "@/lib/website";
 
 import { Section } from "../Section";
-import { Logo } from "./Logo";
 import { Menu } from "./Menu";
 import { Navbar } from "./Navbar";
 
 export default function Header({
   name,
   navigation,
-}: Pick<WebsiteConfig, "name" | "navigation">) {
+  logo,
+}: Pick<WebsiteConfig, "name" | "navigation"> & {
+  logo?: ReactNode;
+}) {
   return (
     <Section
       as="header"
       className="fixed inset-x-0 top-0 z-50 h-14 items-center bg-background lg:h-16"
     >
-      <Logo name={name} className="col-span-2" />
+      <div className="col-span-2">
+        {logo ?? (
+          <Link href="/" className="link font-heading font-semibold">
+            {name}
+          </Link>
+        )}
+      </div>
 
       <Menu
         navigation={navigation}
