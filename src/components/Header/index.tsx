@@ -17,7 +17,7 @@ export default function Header({
   return (
     <Section
       as="header"
-      className="fixed inset-x-0 top-0 z-50 h-14 items-center bg-background lg:h-16"
+      className="fixed inset-x-0 top-0 z-50 h-14 items-center bg-background sm:h-16"
     >
       <div className="col-span-2">
         {logo ?? (

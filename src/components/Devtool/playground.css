@@ -1,25 +1,9 @@
 @reference "../../app/globals.css";
 
-.devtool-playground .title-main {
-  @apply font-heading font-medium text-7xl;
-}
-
-.devtool-playground .title-heading {
-  @apply font-heading font-medium text-5xl;
-}
-
-.devtool-playground .title-subhead {
-  @apply font-heading font-medium text-3xl;
-}
-
-.devtool-playground .title-eyebrow {
-  @apply font-heading font-medium text-2xl;
+.devtool-playground .text-body {
+  @apply text-base md:text-lg;
 }
 
 .devtool-playground .text-lead {
-  @apply font-sans text-2xl;
-}
-
-.devtool-playground .text-body {
-  @apply font-sans text-lg/7;
+  @apply text-xl md:text-2xl;
 }

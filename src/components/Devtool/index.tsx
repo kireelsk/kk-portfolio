@@ -101,6 +101,37 @@ export function Devtool({ children }: { children: ReactNode }) {
   }, [playground, embedded]);
 
   useEffect(() => {
+    if (!rows) return;
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (
+        !event.altKey ||
+        event.metaKey ||
+        event.ctrlKey ||
+        !["ArrowUp", "ArrowDown"].includes(event.key) ||
+        (event.target instanceof Element &&
+          event.target.closest("input, textarea, select, [contenteditable]"))
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+
+      const step = event.shiftKey ? 64 : 16;
+      const direction = event.key === "ArrowDown" ? 1 : -1;
+
+      window.scrollBy({
+        top: step * direction,
+        behavior: "instant",
+      });
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [rows]);
+
+  useEffect(() => {
     const close = () => setPlaygroundPath(null);
 
     window.addEventListener("popstate", close);
